@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/title_background"
+            android:fontFamily="@font/courier_prime_bold"
+            android:gravity="center"
+            android:text="password generator"
+            android:textColor="#F6F6F6"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="18dp" />
+
+        <Switch
+            android:id="@+id/character_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/allowChar"
+            android:textColor="#F6F6F6"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="205dp">
+
+        </Switch>
+
+        <Switch
+            android:id="@+id/number_switch"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/allowNum"
+            android:textColor="#F6F6F6"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="133dp"></Switch>
+
+        <Switch
+            android:id="@+id/special_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/allowSpecialChar"
+            android:textColor="#F6F6F6"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="266dp"></Switch>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="false"
+            android:editable="false"
+            android:padding="10dp"
+            android:text="@string/lblEnterPassword"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/pw_lenght"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/title_background"
+            android:hint="@string/infoDefaultLength"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#F6F6F6"
+            android:textColorHint="#F6F6F6"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="337dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_send_background"
+            android:onClick="generate"
+            android:padding="5dp"
+            android:text="@string/btnPassword"
+            android:textColor="#F6F6F6"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="400dp" />
+
+        <TextView
+            android:id="@+id/pw_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/lblPasswordHere"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/lblHideResult"
+            android:textAlignment="center"
+            android:textColor="#F6F6F6"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="458dp" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
