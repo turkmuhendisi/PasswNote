@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
@@ -20,6 +21,16 @@ public class MainActivity extends AppCompatActivity {
     //test info
     //test info 2
     private ActivityMainBinding binding;
+
+    /**
+     *
+     * @param a first number
+     * @param b second number
+     * @return summation a+b
+     */
+    int summation(int a,int b){
+        return a+b;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
