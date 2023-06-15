@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     /**View binding data member assignment*/
     //test info
+    //test info 2
     private ActivityMainBinding binding;
 
     @Override
