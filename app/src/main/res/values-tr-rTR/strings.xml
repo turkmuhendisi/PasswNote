@@ -8,7 +8,7 @@
     <string name="lblEnterPassword">Şifre uzunluğunu giriniz ↓</string>
     <string name="infoDefaultLength">Varsayılan uzunluk 32 karakter</string>
     <string name="lblHideResult">Şifre oluşturmak için \"Şifre Oluştur\" isimli butona tıklayın.</string>
-    <string name="lblPasswordHere">Oluşturulan Şifre ↓</string>
+    <string name="lblPasswordHere">Oluşturulan Şifre↓</string>
     <string name="infoCopiedText">Şifre panoya kopyalandı</string>
     <string name="infoDigitLess">Şifre 4 karakterden az olamaz</string>
     <string name="infoDigitMore">Şifre 10.000 karakterden fazla olamaz</string>

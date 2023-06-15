@@ -7,7 +7,7 @@
     <string name="lblEnterPassword">Enter your password length ↓</string>
     <string name="infoDefaultLength">Default length is 32</string>
     <string name="lblHideResult">Your password will be here, click the Generate Password button</string>
-    <string name="lblPasswordHere">Your random password ↓</string>
+    <string name="lblPasswordHere">Your random password↓</string>
     <string name="infoCopiedText">Your password has just been copied to clipboard</string>
     <string name="infoDigitLess">Your password cannot be less then 4 digits</string>
     <string name="infoDigitMore">Your password cannot be more then 10.000 digits</string>
