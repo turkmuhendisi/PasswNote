@@ -1,7 +1,5 @@
 package com.erdemserhat.ultimatebox;
-/**
- * Imported packages.
- */
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.erdemserhat.ultimatebox.random_password_generator.*;
@@ -16,7 +14,8 @@ import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-    /**View binding data member assignment*/
+    /**View binding data member declaring*/
+    //test info
     private ActivityMainBinding binding;
 
     @Override
