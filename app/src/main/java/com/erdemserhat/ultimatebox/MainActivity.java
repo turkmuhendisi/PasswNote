@@ -1,19 +1,17 @@
 package com.erdemserhat.ultimatebox;
-
+/**
+ * Imported packages.
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.erdemserhat.ultimatebox.random_password_generator.*;
-
 import android.content.ClipboardManager;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Toast;
-
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
 
