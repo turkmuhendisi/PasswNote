@@ -1,6 +1,10 @@
 package com.erdemserhat.ultimatebox;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.erdemserhat.ultimatebox.random_password_generator.*;
 import android.content.ClipboardManager;
 import android.os.Bundle;
@@ -11,7 +15,7 @@ import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class   MainActivity extends AppCompatActivity {
 
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     /**View binding data member assignment*/
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         binding.numberSwitch.setChecked(true);
         binding.characterSwitch.setChecked(true);
         binding.specialSwitch.setChecked(true);
+        changeFragment(new HomeFragment());
 
 
         /**
@@ -49,6 +54,43 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             }
+        });
+        /**
+         * SetOnClickListener for Navigation Menu....
+         */
+
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+
+                case R.id.history:
+                    //When history icon is clicked on the nav bar.
+                    changeFragment(new HistoryFragment());
+
+                    break;
+
+                case R.id.profile:
+                    //When profile icon is clicked on the nav bar.
+                    changeFragment(new ProfileFragment());
+
+                    break;
+
+                case R.id.settings:
+                    //When settings icon is clicked on the nav bar.
+                    changeFragment(new SettingsFragment());
+
+                    break;
+
+                case R.id.home:
+                    changeFragment(new HomeFragment());
+                    break;
+
+
+            }
+
+
+
+
+            return  true;
         });
 
 
@@ -94,6 +136,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         }
+    /**
+     * This method changes the current fragment with the fragment which comes as parameter
+     */
+    private void changeFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
+
+    }
 
 
 

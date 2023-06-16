@@ -4,7 +4,12 @@
 
     <item android:title="Home"
         android:id="@+id/home"
-        android:icon="@drawable/baseline_home_24" />
+        android:icon="@drawable/baseline_home_24"
+        />
+
+    <item android:title="History"
+        android:id="@+id/history"
+        android:icon="@drawable/baseline_history_24" />
 
     <item android:title="Profile"
         android:id="@+id/profile"
@@ -13,4 +18,5 @@
     <item android:title="Setting"
         android:id="@+id/settings"
         android:icon="@drawable/baseline_settings_24"/>
+
 </menu>
