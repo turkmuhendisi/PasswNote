@@ -7,11 +7,8 @@
     tools:context=".HistoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="25sp"
-        android:gravity="center"
-        android:text="History Screen Design Will Be Implemented Here...(Orhaan)" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

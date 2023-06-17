@@ -206,11 +206,15 @@ public class HomeFragment extends Fragment {
             binding.warning.setText(password);
 
             //If everything is ok, generated password is copied to clipboard automatically.
+
+            /**
+             * Deprecated Feature.
             ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("password text", password);
             clipboardManager.setPrimaryClip(clip);
             Toast.makeText(HomeFragment.this.getContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
 
+             */
         } else {
 
             binding.warning.setText(R.string.infoRadioButton);

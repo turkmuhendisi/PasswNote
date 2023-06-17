@@ -12,19 +12,18 @@ import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
-    //View binding data member assignment
+    //To use view binding feature, reference (binding) of ActivityMainBinding class is declared below.
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        /**Some Implementation for view binding process*/
-
+        //Some Implementation for view binding process*
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        //Going to HomeFragment.xml
+
+        //Going to HomeFragment.xml whenever app is started.
         changeFragment(new HomeFragment());
 
 
