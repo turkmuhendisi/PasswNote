@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        //changeFragment(new HomeFragment());
+        //Going to HomeFragment.xml
+        changeFragment(new HomeFragment());
 
 
         /**

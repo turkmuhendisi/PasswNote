@@ -3,6 +3,7 @@ package com.erdemserhat.ultimatebox;
 import static android.content.Context.CLIPBOARD_SERVICE;
 import static androidx.core.content.ContextCompat.getSystemService;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -40,32 +41,74 @@ import com.erdemserhat.ultimatebox.databinding.FragmentHomeBinding;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    //To use alpha animation an object of AlphaAnimation class is instantiated below.
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
+    //To use view binding feature, reference (binding) of FragmentHomeBinding class is declared below.
     private FragmentHomeBinding binding;
 
+
+    /**
+     * Note ; You should set up view binding settings here.
+     *
+     * @param inflater           The LayoutInflater object that can be used to inflate
+     *                           any views in the fragment,
+     * @param container          If non-null, this is the parent view that the fragment's
+     *                           UI should be attached to.  The fragment should not add the view itself,
+     *                           but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     *                           from a previous saved state as given here.
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        //To use view binding feature and bind fragment_home.xml and HomeFragment.java files, some operations are implemented below.
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        return binding.getRoot();
+        View view = binding.getRoot();
+        return view;
     }
 
-
+    /**
+     * You can use binding object to reach views in the body of the method.
+     *
+     * @param view               The View returned by {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     *                           from a previous saved state as given here.
+     */
     @Override
-    public void onViewCreated(View view,  Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //you are free to use binding object to manipulate views.
+
+        //Some default setting for switches.
+        binding.characterSwitch.setChecked(true);
+        binding.numberSwitch.setChecked(true);
+        binding.specialSwitch.setChecked(true);
 
 
-
-
-        // Burada binding nesnesini kullanarak layout içindeki view'lara erişebilirsiniz
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        //When generate button is clicked by the user;
+        binding.generateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Butona tıklandığında yapılacak işlemler
+                //these processes will be run..
                 generate(v);
+            }
+        });
+
+
+        /**
+         * When user long clicks the password area, the current text of warning view will be copied to clipboard
+         */
+        binding.warning.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                String password = binding.warning.getText().toString();
+                ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                clipboardManager.setText(password);
+                Toast.makeText(requireContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
+                return true;
             }
         });
     }
@@ -73,8 +116,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        // Fragment view'i yok edildiğinde binding nesnesini null'a ayarla
-        //binding = null;
+        binding = null;
     }
 
     // TODO: Rename parameter arguments, choose names that match
@@ -115,38 +157,24 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        /**
-         * Assigning the default config.
-         */
-
-
-
-        /**
-         * When user long clicks the password area, the current text of warning view will be copied to clipboard
-         */
-
-        binding.warning.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                String password = binding.warning.getText().toString();
-                ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                clipboardManager.setText(password);
-                Toast.makeText(requireContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-
 
     }
 
 
+    /**
+     * @param view
+     */
     public void generate(View view) {
         //Animation
         view.startAnimation(buttonClick);
+
+        //Getting switch  and password length options.
         boolean isCharacter = binding.characterSwitch.isChecked();
         boolean isNumerical = binding.numberSwitch.isChecked();
         boolean isSpecialCharacter = binding.specialSwitch.isChecked();
         String pwLengthTemp = binding.pwLenght.getText().toString();
+
+        //If password length(pwLength) is empty, 32 value is taken as default, otherwise a different value should be entered from user so this value is kept.
         int passwordLength;
         if (pwLengthTemp.isEmpty()) {
             passwordLength = 32;
@@ -154,25 +182,35 @@ public class HomeFragment extends Fragment {
             passwordLength = Integer.parseInt(pwLengthTemp);
         }
 
+        //If at least one option is selected by user, if body will be run.
         if (isCharacter || isSpecialCharacter || isNumerical) {
 
+            //Some conditions are controlled.
             if (passwordLength < 4) {
                 binding.warning.setText(R.string.infoDigitLess);
+                //if the conditions is not provided, function finishes. (by return)
                 return;
             } else if (passwordLength > 10000) {
+                //if the conditions is not provided, function finishes. (by return)
                 binding.warning.setText(R.string.infoDigitMore);
                 return;
-
             }
+
+            //If whole conditions are provided, password generate process starts ;
             Generator generator = new Generator(isNumerical, isCharacter, isSpecialCharacter, passwordLength);
+            //the password which has provides the options of user generated and is kept as value in the "password" object
             String password = generator.createPassword();
+            //a sign will be visible to make user inform about where generated password is.
             binding.pwTitle.setVisibility(View.VISIBLE);
+            //generated password will be visible related view.
             binding.warning.setText(password);
 
-
+            //If everything is ok, generated password is copied to clipboard automatically.
             ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            clipboardManager.setText(password);
+            ClipData clip = ClipData.newPlainText("password text", password);
+            clipboardManager.setPrimaryClip(clip);
             Toast.makeText(HomeFragment.this.getContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
+
         } else {
 
             binding.warning.setText(R.string.infoRadioButton);
