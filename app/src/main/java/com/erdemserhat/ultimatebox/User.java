@@ -31,7 +31,10 @@ public class User {
     public User(String username, String password, int userId, List<Password> passwordList) {
         this.username = username;
         this.password = password;
-        this.userId = userId;
         this.passwordList = passwordList;
+
+        //TODO : implement id assignment processes.
+        this.userId=0;
+
     }
 }

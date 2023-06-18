@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -34,6 +35,8 @@ import android.view.ViewGroup;
 
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 import com.erdemserhat.ultimatebox.databinding.FragmentHomeBinding;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -111,6 +114,16 @@ public class HomeFragment extends Fragment {
                 return true;
             }
         });
+
+        //New Feature about save ps.
+
+        binding.saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               CustomDialog customDialog = new CustomDialog(HomeFragment.this.requireContext());
+                customDialog.show();
+            }
+        });
     }
 
     @Override
@@ -167,6 +180,7 @@ public class HomeFragment extends Fragment {
     public void generate(View view) {
         //Animation
         view.startAnimation(buttonClick);
+        binding.saveButton.setVisibility(View.VISIBLE);
 
         //Getting switch  and password length options.
         boolean isCharacter = binding.characterSwitch.isChecked();
@@ -221,6 +235,14 @@ public class HomeFragment extends Fragment {
         }
 
     }
+/**
+    public void save(View view){
+        CustomDialog customDialog = new CustomDialog(HomeFragment.this.requireContext());
+        customDialog.show();
 
 
+
+    }
+
+*/
 }
