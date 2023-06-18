@@ -7,25 +7,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public  class CustomDialog extends Dialog {
+public   class CustomDialog extends Dialog {
+    //Data members.
     private EditText title;
     private Button saveButton;
     private Button cancelButton;
+    //Call back design for manipulating data in a class.
+    private CustomDialogListener listener;
 
-    public CustomDialog(@NonNull Context context) {
+    // Needed Getters and Setters
+
+
+
+    public void setCustomDialogListener(CustomDialogListener listener) {
+        this.listener = listener;
+    }
+
+    public String  getPasswordTitle(){
+        return title.getText().toString();
+    }
+
+    //Default Constructor
+    public CustomDialog(Context context,CustomDialogListener listener) {
         super(context);
+        this.listener=listener;
+
     }
 
-    public CustomDialog(@NonNull Context context, int themeResId) {
-        super(context, themeResId);
-    }
-
-    protected CustomDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
-        super(context, cancelable, cancelListener);
+    public CustomDialog(Context context) {
+        super(context);
     }
     
     @Override
@@ -43,8 +58,9 @@ public  class CustomDialog extends Dialog {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //...
+                listener.onSaveClicked();
                 dismiss();
+
             }
         });
 
@@ -53,7 +69,7 @@ public  class CustomDialog extends Dialog {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //...
+                listener.onCancelClicked();
                 dismiss();
             }
         });
@@ -61,4 +77,18 @@ public  class CustomDialog extends Dialog {
 
 
     }
+
+    //When buttons are touched by the user.
+    private void handleSaveClicked() {
+        if (listener != null) {
+            listener.onSaveClicked();
+        }
+    }
+
+    private void handleCancelClicked() {
+        if (listener != null) {
+            listener.onCancelClicked();
+        }
+    }
+
 }

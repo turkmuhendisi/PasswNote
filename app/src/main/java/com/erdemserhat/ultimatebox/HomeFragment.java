@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
@@ -36,6 +37,7 @@ import android.view.ViewGroup;
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
 import com.erdemserhat.ultimatebox.databinding.FragmentHomeBinding;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -120,10 +122,48 @@ public class HomeFragment extends Fragment {
         binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               CustomDialog customDialog = new CustomDialog(HomeFragment.this.requireContext());
+
+                CustomDialog customDialog = new CustomDialog(getContext());
+                //NOTE: Interface  design pattern is used.
+                customDialog.setCustomDialogListener(new CustomDialogListener() {
+                    @Override
+                    public void onSaveClicked() {
+                        String pwTitle;
+                        try{
+                            pwTitle = customDialog.getPasswordTitle();
+                            if(pwTitle==null || pwTitle.isEmpty() || pwTitle.isBlank()) {
+                                throw new IllegalArgumentException();
+                            }else{
+                                //TODO: save the password to db.
+                                //...
+                                //Password password = new Password(binding.warning.getText().toString(),pwTitle,new Date());
+                                //continue to here
+                            }
+
+
+                        }catch (IllegalArgumentException e){
+                            e.printStackTrace();
+                            Toast.makeText(getContext(),"Please enter a title", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+
+
+                    @Override
+                    public void onCancelClicked() {
+                        //TODO: Implement the body (when save button is clicked in the dialog)
+
+                    }
+                });
+
                 customDialog.show();
+
+
             }
         });
+
+
     }
 
     @Override
