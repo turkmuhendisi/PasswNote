@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        //Going to HomeFragment.xml whenever app is started.
+        //Going to HomeFragment.xml and updating database whenever app is started.
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+        databaseHelper.updatePasswordData(getApplicationContext());
         changeFragment(new HomeFragment());
 
 
@@ -38,12 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
-
-                case R.id.history:
-                    //When history icon is clicked on the nav bar.
-                    changeFragment(new HistoryFragment());
-
-                    break;
 
                 case R.id.profile:
                     //When profile icon is clicked on the nav bar.

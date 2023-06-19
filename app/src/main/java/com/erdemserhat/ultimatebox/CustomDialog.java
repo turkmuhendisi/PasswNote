@@ -58,8 +58,10 @@ public   class CustomDialog extends Dialog {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 listener.onSaveClicked();
                 dismiss();
+
 
             }
         });

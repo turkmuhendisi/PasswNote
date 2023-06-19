@@ -3,6 +3,7 @@ package com.erdemserhat.ultimatebox;
 import java.util.List;
 
 public class User {
+
     private String username;
     private String password;
     private int userId;

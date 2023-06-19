@@ -4,7 +4,10 @@ import static android.content.Context.CLIPBOARD_SERVICE;
 import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.content.ClipData;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -136,8 +139,19 @@ public class HomeFragment extends Fragment {
                             }else{
                                 //TODO: save the password to db.
                                 //...
-                                //Password password = new Password(binding.warning.getText().toString(),pwTitle,new Date());
-                                //continue to here
+                                //Getting DB
+                                DatabaseHelper databaseHelper = DatabaseHelper.getInstance(getContext());
+                                SQLiteDatabase database = databaseHelper.getWritableDatabase();
+                                //Inserting data.
+                                ContentValues values = new ContentValues();
+                                values.put("content",binding.warning.getText().toString());
+                                values.put("title",pwTitle);
+                                values.put("date",String.valueOf(new Date()));
+                                //Sending Data
+                                database.insert("passwords", null, values);
+
+                                //Updating Data
+                                databaseHelper.updatePasswordData(getContext());
                             }
 
 

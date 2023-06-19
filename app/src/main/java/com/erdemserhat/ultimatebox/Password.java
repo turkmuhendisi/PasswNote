@@ -11,7 +11,7 @@ public class Password {
     //Data members (fields)
     private String content;
     private String title;
-    private Date createdDate;
+    private String createdDate;
     private int passwordId;
 
     /**
@@ -20,7 +20,7 @@ public class Password {
      * @param title the title of password. (for example : My Instagram Account)
      * @param createdDate the crated date of password.
      */
-    public Password(String content, String title,Date createdDate, int passwordId){
+    public Password(String content, String title,String createdDate, int passwordId){
         this.content=new String(content);
         this.title=title;
         this.createdDate=createdDate;
@@ -28,6 +28,7 @@ public class Password {
         // processes about password id will be implemented based on other features.
         //...
         this.passwordId=0;
+
     }
 
     /**
@@ -35,10 +36,6 @@ public class Password {
      * @param content the content of password (password's itself)
      * @param createdDate the title of password. (for example : My Instagram Account)
      */
-
-    public Password(String content, Date createdDate){
-        new Password(content,"Copied Password",new Date(),0);
-    }
 
 
     //Getters and setters
@@ -67,11 +64,11 @@ public class Password {
         this.title = title;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 }

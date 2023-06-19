@@ -8,9 +8,6 @@
         />
 
 
-    <item android:title="History"
-        android:id="@+id/history"
-        android:icon="@drawable/baseline_history_24" />
 
     <item android:title="Profile"
         android:id="@+id/profile"
