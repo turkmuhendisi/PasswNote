@@ -1,5 +1,9 @@
 package com.erdemserhat.ultimatebox;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,7 +56,7 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PasswordHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PasswordHolder holder, @SuppressLint("RecyclerView") int position) {
         //Get data
         PasswordList passwordList = PasswordList.getInstance();
         Password password = passwordList.getPasswordList().get(position);
@@ -65,29 +69,55 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
             @Override
             public void onClick(View view) {
 
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                builder.setTitle("Are you sure ? ");
+                builder.setMessage(password.getTitle() + " will be deleted");
 
 
+                //Positive Button
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //When positive button is clicked.
+                        DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
+                        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+                        //Assigning the related password's id.
+                        int passwordId = password.getPasswordId();
+
+                        //Committing the delete instruction
+                        database.delete("passwords", "id = ?", new String[]{String.valueOf(passwordId)});
+                        //Deprecated Block either delete or exeSQL works.
+                        //database.execSQL("DELETE FROM passwords WHERE id ="+passwordId);
+
+                        //Closing database.
+                        database.close();
+
+                        //Updating the data with current database.
+                        databaseHelper.updatePasswordData(view.getContext());
+
+                        // removing the related item on the Recycler View.
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, passwordList.getLength());
+                    }
+                });
+
+
+                //Negative Button
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //When negative button is clicked.
+                        dialog.cancel();
+                    }
+                });
+
+
+                //Showing Dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
 
                 //Getting Database
-                DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
-                SQLiteDatabase database = databaseHelper.getWritableDatabase();
-                //Assigning the related password's id.
-                int passwordId = password.getPasswordId();
 
-                //Committing the delete instruction
-                database.delete("passwords", "id = ?", new String[]{String.valueOf(passwordId)});
-                //Deprecated Block either delete or exeSQL works.
-                //database.execSQL("DELETE FROM passwords WHERE id ="+passwordId);
-
-                //Closing database.
-                database.close();
-
-                //Updating the data with current database.
-                databaseHelper.updatePasswordData(view.getContext());
-
-                // removing the related item on the Recycler View.
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, passwordList.getLength());
             }
         });
     }
