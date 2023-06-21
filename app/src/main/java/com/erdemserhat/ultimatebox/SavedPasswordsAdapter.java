@@ -1,5 +1,6 @@
 package com.erdemserhat.ultimatebox;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import com.erdemserhat.ultimatebox.Password;
 import com.erdemserhat.ultimatebox.PasswordList;
 
 public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAdapter.PasswordHolder> {
+
+    private PasswordHolder holder;
+    private int position;
 
     @NonNull
     @Override
@@ -52,9 +56,40 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
         //Get data
         PasswordList passwordList = PasswordList.getInstance();
         Password password = passwordList.getPasswordList().get(position);
-
         //show data
         holder.bind(password);
+        //Delete Button Implementation
+        holder.itemView.findViewById(R.id.deleteButton).setOnClickListener(new View.OnClickListener() {
+
+            //Implementing the onClick method to give as parameter to setOnClickListener method.
+            @Override
+            public void onClick(View view) {
+
+
+
+
+                //Getting Database
+                DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
+                SQLiteDatabase database = databaseHelper.getWritableDatabase();
+                //Assigning the related password's id.
+                int passwordId = password.getPasswordId();
+
+                //Committing the delete instruction
+                database.delete("passwords", "id = ?", new String[]{String.valueOf(passwordId)});
+                //Deprecated Block either delete or exeSQL works.
+                //database.execSQL("DELETE FROM passwords WHERE id ="+passwordId);
+
+                //Closing database.
+                database.close();
+
+                //Updating the data with current database.
+                databaseHelper.updatePasswordData(view.getContext());
+
+                // removing the related item on the Recycler View.
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, passwordList.getLength());
+            }
+        });
     }
 
     @Override

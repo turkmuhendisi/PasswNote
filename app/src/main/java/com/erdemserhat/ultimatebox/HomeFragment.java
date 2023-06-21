@@ -245,7 +245,7 @@ public class HomeFragment extends Fragment {
         //If password length(pwLength) is empty, 32 value is taken as default, otherwise a different value should be entered from user so this value is kept.
         int passwordLength;
         if (pwLengthTemp.isEmpty()) {
-            passwordLength = 32;
+            passwordLength = 16;
         } else {
             passwordLength = Integer.parseInt(pwLengthTemp);
         }

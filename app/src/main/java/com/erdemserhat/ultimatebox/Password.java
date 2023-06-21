@@ -24,10 +24,10 @@ public class Password {
         this.content=new String(content);
         this.title=title;
         this.createdDate=createdDate;
+        this.passwordId=passwordId;
 
         // processes about password id will be implemented based on other features.
         //...
-        this.passwordId=0;
 
     }
 
@@ -70,5 +70,13 @@ public class Password {
 
     public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public int getPasswordId() {
+        return this.passwordId;
+    }
+
+    public void setPasswordId(int passwordId) {
+        this.passwordId = passwordId;
     }
 }
