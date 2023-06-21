@@ -1,6 +1,5 @@
 package com.erdemserhat.ultimatebox;
 
-import com.erdemserhat.ultimatebox.Password;
 
 import java.util.ArrayList;
 

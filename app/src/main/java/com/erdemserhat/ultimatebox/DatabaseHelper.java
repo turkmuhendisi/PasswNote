@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.Random;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     //Data members
     private static final String DATABASE_NAME="local_password_database.db";
