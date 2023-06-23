@@ -1,8 +1,10 @@
 package com.erdemserhat.ultimatebox;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -30,6 +32,48 @@ public class CustomDialogEditMenu extends Dialog {
      */
     public CustomDialogEditMenu(Context context) {
         super(context);
+        this.previousContent= editedContent.toString();
+        this.previousTitle= editedTitle.toString();
+    }
+
+    public String getPreviousTitle() {
+        return previousTitle;
+    }
+
+    public void setPreviousTitle(String previousTitle) {
+        this.previousTitle = previousTitle;
+    }
+
+    public String getPreviousContent() {
+        return previousContent;
+    }
+
+    public void setPreviousContent(String previousContent) {
+        this.previousContent = previousContent;
+    }
+
+    public String getEditedTitle() {
+        return editedTitle;
+    }
+
+    public void setEditedTitle(String editedTitle) {
+        this.editedTitle = editedTitle;
+    }
+
+    public String getEditedContent() {
+        return editedContent;
+    }
+
+    public void setEditedContent(String editedContent) {
+        this.editedContent = editedContent;
+    }
+
+    public CustomDialogListener getListener() {
+        return listener;
+    }
+
+    public void setListener(CustomDialogListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -44,6 +88,36 @@ public class CustomDialogEditMenu extends Dialog {
         editTitle=findViewById(R.id.contentEditMenu);
         saveButton=findViewById(R.id.saveEditMenu);
         cancelButton=findViewById(R.id.cancelEditMenu);
+
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //listener.onSaveClicked();
+                editedTitle=editTitle.toString();
+                editedContent=editedContent.toString();
+                String alertMessage=previousTitle +" --> " + editedTitle +"\n"+
+                        previousContent +" --> " + editedContent;
+                String alertTitle="Do you approve the changes?";
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                builder.setTitle(alertTitle);
+                builder.setMessage(alertMessage);
+                //Continue.......
+
+
+
+
+
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //listener.onCancelClicked();
+            }
+        });
 
 
     }
