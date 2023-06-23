@@ -79,4 +79,6 @@ public class SavedPasswords extends Fragment {
         recyclerView.setAdapter(adapter);
         return view;
     }
+
+
 }

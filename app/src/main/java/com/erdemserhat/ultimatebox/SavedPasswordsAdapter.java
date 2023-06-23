@@ -120,6 +120,15 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
 
             }
         });
+
+
+        holder.itemView.findViewById(R.id.editButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomDialogEditMenu customDialogEditMenu = new CustomDialogEditMenu(view.getContext());
+                customDialogEditMenu.show();
+            }
+        });
     }
 
     @Override
