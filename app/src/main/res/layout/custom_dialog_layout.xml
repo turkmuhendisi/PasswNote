@@ -16,11 +16,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
         <Button
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
-            android:background="@drawable/btn_send_background"
             android:layout_height="wrap_content"
+            android:background="@drawable/btn_send_background"
             android:text="Save" />
 
         <Button
@@ -29,6 +34,11 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_send_background"
             android:text="Cancel" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
 
     </LinearLayout>

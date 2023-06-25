@@ -13,5 +13,6 @@
     <string name="infoDigitMore">Your password cannot be more then 10.000 digits</string>
     <string name="infoRadioButton">Please select at least one option</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="sync_text"><u>Synchronization</u></string>
 </resources>
