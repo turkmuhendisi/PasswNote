@@ -3,6 +3,7 @@ package com.erdemserhat.ultimatebox;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,12 +19,15 @@ public class CustomDialogEditMenu extends Dialog {
     private Button saveButton;
     private Button cancelButton;
     //pw data's
+
+    //Previous data
     private String previousTitle;
     private String previousContent;
+    //Edited datas
     private String editedTitle;
     private String editedContent;
 
-    private  CustomDialogListener listener;
+    private  CustomDialogEditMenuListener customDialogEditMenuListener;
 
 
     /**
@@ -32,8 +36,7 @@ public class CustomDialogEditMenu extends Dialog {
      */
     public CustomDialogEditMenu(Context context) {
         super(context);
-        this.previousContent= editedContent.toString();
-        this.previousTitle= editedTitle.toString();
+
     }
 
     public String getPreviousTitle() {
@@ -68,12 +71,45 @@ public class CustomDialogEditMenu extends Dialog {
         this.editedContent = editedContent;
     }
 
-    public CustomDialogListener getListener() {
-        return listener;
+
+    public EditText getEditContent() {
+        return editContent;
     }
 
-    public void setListener(CustomDialogListener listener) {
-        this.listener = listener;
+    public void setEditContent(EditText editContent) {
+        this.editContent = editContent;
+    }
+
+    public EditText getEditTitle() {
+        return editTitle;
+    }
+
+    public void setEditTitle(EditText editTitle) {
+        this.editTitle = editTitle;
+    }
+
+    public Button getSaveButton() {
+        return saveButton;
+    }
+
+    public void setSaveButton(Button saveButton) {
+        this.saveButton = saveButton;
+    }
+
+    public Button getCancelButton() {
+        return cancelButton;
+    }
+
+    public void setCancelButton(Button cancelButton) {
+        this.cancelButton = cancelButton;
+    }
+
+    public CustomDialogEditMenuListener getCustomDialogEditMenuListener() {
+        return customDialogEditMenuListener;
+    }
+
+    public void setCustomDialogEditMenuListener(CustomDialogEditMenuListener customDialogEditMenuListener) {
+        this.customDialogEditMenuListener = customDialogEditMenuListener;
     }
 
     @Override
@@ -84,26 +120,23 @@ public class CustomDialogEditMenu extends Dialog {
 
         //Assigning the related views.
 
-        editContent=findViewById(R.id.titleEditMenu);
-        editTitle=findViewById(R.id.contentEditMenu);
+        editContent=findViewById(R.id.contentEditMenu);
+        editTitle=findViewById(R.id.titleEditMenu);
         saveButton=findViewById(R.id.saveEditMenu);
         cancelButton=findViewById(R.id.cancelEditMenu);
+        customDialogEditMenuListener.onWriteOldInformation();
 
 
+
+        //Save button implementation...
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //listener.onSaveClicked();
-                editedTitle=editTitle.toString();
-                editedContent=editedContent.toString();
-                String alertMessage=previousTitle +" --> " + editedTitle +"\n"+
-                        previousContent +" --> " + editedContent;
-                String alertTitle="Do you approve the changes?";
+               customDialogEditMenuListener.onSaveClicked();
+               DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setTitle(alertTitle);
-                builder.setMessage(alertMessage);
-                //Continue.......
+
+
 
 
 
@@ -115,10 +148,11 @@ public class CustomDialogEditMenu extends Dialog {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //listener.onCancelClicked();
+                customDialogEditMenuListener.onCancelClicked();
             }
         });
 
 
     }
+
 }

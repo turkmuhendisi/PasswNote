@@ -3,6 +3,10 @@ package com.erdemserhat.ultimatebox;
 
 import java.util.ArrayList;
 
+/**
+ * Implemented Singleton Design Pattern...
+ */
+
 public class PasswordList {
     private static PasswordList instance;
     private ArrayList<Password> passwordList;

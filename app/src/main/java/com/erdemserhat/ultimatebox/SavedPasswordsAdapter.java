@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,11 +123,78 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
         });
 
 
+        //When edit button is clicked by the user.
+
         holder.itemView.findViewById(R.id.editButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Password passwordTemp = PasswordList.getInstance().getPasswordList().get(position);
                 CustomDialogEditMenu customDialogEditMenu = new CustomDialogEditMenu(view.getContext());
-                customDialogEditMenu.show();
+                customDialogEditMenu.setCustomDialogEditMenuListener(new CustomDialogEditMenuListener() {
+                    @Override
+                    public void onSaveClicked() {
+                       AlertDialog.Builder alBuilder = new AlertDialog.Builder(view.getContext());
+                       String title = "Are you sure about modifications ?";
+                       String message ="Title will be ;" +"\n"+ passwordTemp.getTitle()+" --> "+customDialogEditMenu.getEditTitle().getText()+"\n"+
+                               "Content will be ;" +"\n" +passwordTemp.getContent()+" --> "+customDialogEditMenu.getEditContent().getText();
+                       alBuilder.setTitle(title);
+                       alBuilder.setMessage(message);
+                       alBuilder.setPositiveButton("I'm sure", new DialogInterface.OnClickListener() {
+                           //If the user is sure about modifications.
+
+                           @Override
+                           public void onClick(DialogInterface dialogInterface, int i) {
+                               //Getting some necessary info.
+                               String newTitle=customDialogEditMenu.getEditTitle().getText().toString();
+                               String newContent=customDialogEditMenu.getEditContent().getText().toString();
+                               String tableName="passwords";
+
+                               int passwordId = PasswordList.getInstance().getPasswordList().get(position).getPasswordId();
+                               //Updating dataset
+                               DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
+                               SQLiteDatabase database = databaseHelper.getWritableDatabase();
+                               String sql = "UPDATE " + tableName + " SET title = ?, content = ? WHERE id = ?";
+                               SQLiteStatement statement = database.compileStatement(sql);
+                               statement.bindString(1,newTitle);
+                               statement.bindString(2,newContent);
+                               statement.bindLong(3,passwordId);
+                               statement.executeUpdateDelete();
+                               database.close();
+                               databaseHelper.updatePasswordData(view.getContext());
+                               notifyDataSetChanged();
+                           }
+                       });
+                     alBuilder.setNegativeButton("Not yet", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialogInterface, int i) {
+                             alBuilder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                                 @Override
+                                 public void onCancel(DialogInterface dialogInterface) {
+
+                                 }
+                             });
+                         }
+                     });
+                     alBuilder.show();
+
+
+                    }
+
+                    @Override
+                    public void onCancelClicked() {
+                        customDialogEditMenu.cancel();
+
+                    }
+
+                    @Override
+                    public void onWriteOldInformation() {
+                        //Saving old data to ask user.
+                        customDialogEditMenu.getEditContent().setText(passwordTemp.getContent());
+                        customDialogEditMenu.getEditTitle().setText(passwordTemp.getTitle());
+
+
+                    }
+                });customDialogEditMenu.show();
             }
         });
     }
