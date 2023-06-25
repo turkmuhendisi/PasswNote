@@ -88,6 +88,7 @@
             android:textSize="18sp"
             android:textStyle="italic" />
 
+        <!--Deprecated Feature
         <EditText
             android:id="@+id/pw_lenght"
             android:layout_width="match_parent"
@@ -105,6 +106,16 @@
             android:textStyle="italic"
             tools:layout_editor_absoluteX="17dp"
             tools:layout_editor_absoluteY="337dp" />
+
+                                        -->
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:min="4"
+            android:max="32"
+            android:progress="4" />
 
 
         <Button

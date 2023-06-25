@@ -162,6 +162,9 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
                                database.close();
                                databaseHelper.updatePasswordData(view.getContext());
                                notifyDataSetChanged();
+                               onCancelClicked();
+
+
                            }
                        });
                      alBuilder.setNegativeButton("Not yet", new DialogInterface.OnClickListener() {

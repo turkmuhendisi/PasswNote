@@ -136,10 +136,16 @@ public class HomeFragment extends Fragment {
                             pwTitle = customDialog.getPasswordTitle();
                             if(pwTitle==null || pwTitle.isEmpty() || pwTitle.isBlank()) {
                                 throw new IllegalArgumentException();
+                            }else if(pwTitle.length()>16){
+
+                                Toast.makeText(getContext(),"Title mus be less than 16 char.", Toast.LENGTH_SHORT).show();
+                                return;
+
                             }else{
                                 //TODO: save the password to db.
                                 //...
                                 //Getting DB
+                                pwTitle=pwTitle.trim();
                                 DatabaseHelper databaseHelper = DatabaseHelper.getInstance(getContext());
                                 SQLiteDatabase database = databaseHelper.getWritableDatabase();
                                 //Inserting data.
@@ -240,7 +246,9 @@ public class HomeFragment extends Fragment {
         boolean isCharacter = binding.characterSwitch.isChecked();
         boolean isNumerical = binding.numberSwitch.isChecked();
         boolean isSpecialCharacter = binding.specialSwitch.isChecked();
-        String pwLengthTemp = binding.pwLenght.getText().toString();
+        //Deprecated
+        //String pwLengthTemp = binding.pwLenght.getText().toString();
+        String pwLengthTemp = String.valueOf(12);
 
         //If password length(pwLength) is empty, 32 value is taken as default, otherwise a different value should be entered from user so this value is kept.
         int passwordLength;

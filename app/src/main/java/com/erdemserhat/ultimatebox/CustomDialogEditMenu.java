@@ -133,13 +133,6 @@ public class CustomDialogEditMenu extends Dialog {
             @Override
             public void onClick(View view) {
                customDialogEditMenuListener.onSaveClicked();
-               DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
-
-
-
-
-
-
 
 
             }
