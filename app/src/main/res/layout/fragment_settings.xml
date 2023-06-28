@@ -140,14 +140,12 @@
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/notificationIcon"/>
 
-                    <androidx.appcompat.widget.SwitchCompat
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/notificationsSwitch"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        android:src="@drawable/right_arrow_icon" />
                 </RelativeLayout>
 
                 <!-- Private Account-->
@@ -174,14 +172,12 @@
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/privateAccountIcon"/>
 
-                    <androidx.appcompat.widget.SwitchCompat
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/privateAccountSwitch"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        android:layout_centerVertical="true"/>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -221,9 +217,9 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/right_arrow_icon" />
                 </RelativeLayout>
 
                 <!-- Text Size -->
@@ -248,6 +244,8 @@
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/textSizeIcon"/>
+
+
 
                     <ImageView
                         android:layout_width="wrap_content"

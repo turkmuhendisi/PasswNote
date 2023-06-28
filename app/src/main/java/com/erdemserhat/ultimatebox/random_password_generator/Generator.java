@@ -96,6 +96,45 @@ public class Generator {
         while (password.length() != passwordLength) {
             int randomIx = (int) (Math.random() * text.length());
             password += text.charAt(randomIx);
+
+            if (password.length()==passwordLength & (this.isNumerical)==true) {
+                boolean control = false;
+                for (int i = 0; i < password.length() ; i++) {
+                    for (int j = 0; j < numerical.length(); j++) {
+                        if (password.charAt(i)==numerical.charAt(j)) {
+                            control = true;
+                            break;
+                        }
+                    }
+                }
+                if (!control) { password = ""; }
+            }
+
+            if (password.length()==passwordLength & (this.isSpecialCharacter)==true) {
+                boolean control = false;
+                for (int i = 0; i < password.length() ; i++) {
+                    for (int j = 0; j < specialCharacter.length(); j++) {
+                        if (password.charAt(i)==specialCharacter.charAt(j)) {
+                            control = true;
+                            break;
+                        }
+                    }
+                }
+                if (!control) { password = ""; }
+            }
+
+            if (password.length()==passwordLength & (this.isCharacter)==true) {
+                boolean control = false;
+                for (int i = 0; i < password.length() ; i++) {
+                    for (int j = 0; j < character.length(); j++) {
+                        if (password.charAt(i)==character.charAt(j)) {
+                            control = true;
+                            break;
+                        }
+                    }
+                }
+                if (!control) { password = ""; }
+            }
         }
 
         return password;
