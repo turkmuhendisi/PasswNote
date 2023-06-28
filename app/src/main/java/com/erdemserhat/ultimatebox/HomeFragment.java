@@ -277,7 +277,7 @@ public class HomeFragment extends Fragment {
             //the password which has provides the options of user generated and is kept as value in the "password" object
             String password = generator.createPassword();
             //a sign will be visible to make user inform about where generated password is.
-            binding.pwTitle.setVisibility(View.VISIBLE);
+            binding.warning.setVisibility(View.VISIBLE);
             //generated password will be visible related view.
             binding.warning.setText(password);
 
@@ -285,10 +285,10 @@ public class HomeFragment extends Fragment {
 
             /**
              * Deprecated Feature.
-            ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("password text", password);
-            clipboardManager.setPrimaryClip(clip);
-            Toast.makeText(HomeFragment.this.getContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
+             ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
+             ClipData clip = ClipData.newPlainText("password text", password);
+             clipboardManager.setPrimaryClip(clip);
+             Toast.makeText(HomeFragment.this.getContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
 
              */
         } else {
@@ -298,13 +298,13 @@ public class HomeFragment extends Fragment {
 
     }
 /**
-    public void save(View view){
-        CustomDialog customDialog = new CustomDialog(HomeFragment.this.requireContext());
-        customDialog.show();
+ public void save(View view){
+ CustomDialog customDialog = new CustomDialog(HomeFragment.this.requireContext());
+ customDialog.show();
 
 
 
-    }
+ }
 
-*/
+ */
 }

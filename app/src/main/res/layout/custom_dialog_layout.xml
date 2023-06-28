@@ -2,14 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:background="@color/theme_white"
+    android:orientation="vertical"
+    android:padding="10dp">
 
 
     <EditText
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write a title for password" />
+        android:hint="Write a title for password"
+        android:textColorHint="@color/first_blue"/>
 
 
     <LinearLayout
@@ -26,14 +29,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_light"
-            android:text="Save" />
+            android:layout_marginRight="5dp"
+            android:text="Save"
+            android:textColor="@color/first_blue"/>
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_light"
-            android:text="Cancel" />
+            android:layout_marginLeft="5dp"
+            android:text="Cancel"
+            android:textColor="@color/first_blue"/>
 
         <Space
             android:layout_width="wrap_content"

@@ -30,7 +30,8 @@
             android:textStyle="bold"
             android:theme="@style/nightModeSwitch"
             tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="205dp">
+            tools:layout_editor_absoluteY="205dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml">
 
         </Switch>
 
@@ -50,7 +51,8 @@
             android:textStyle="bold"
             android:theme="@style/nightModeSwitch"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="133dp"></Switch>
+            tools:layout_editor_absoluteY="133dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
             android:id="@+id/special_switch"
@@ -68,7 +70,8 @@
             android:textStyle="bold"
             android:theme="@style/nightModeSwitch"
             tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="266dp"></Switch>
+            tools:layout_editor_absoluteY="266dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
             android:id="@+id/textView2"
@@ -80,7 +83,6 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:clickable="false"
             android:editable="false"
             android:padding="10dp"
@@ -118,6 +120,7 @@
             android:min="4"
             android:max="32"
             android:progress="4"
+            android:progressBackgroundTint="@color/first_blue"
             android:progressTint="@color/second_blue"
             android:thumbTint="@color/first_blue"/>
 
@@ -126,9 +129,9 @@
             android:id="@+id/generateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
             android:layout_marginTop="15dp"
-            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
             android:background="@drawable/button_light"
             android:onClick="generate"
             android:padding="10dp"
@@ -139,32 +142,39 @@
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="400dp" />
 
+
         <TextView
-            android:id="@+id/pw_title"
+            android:id="@+id/warning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/round_section_rectangle_light_theme"
+            android:gravity="center"
+            android:padding="10dp"
             android:textAlignment="center"
-            android:textColor="@color/theme_white"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            android:visibility="invisible" />
+            android:textColor="@color/first_blue"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="458dp"
+            android:visibility=""/>
 
         <Button
             android:id="@+id/saveButton"
-            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="5dp"
             android:background="@drawable/button_light"
             android:padding="10dp"
             android:text="Save"
-            android:textColor="@color/theme_white"
+            android:textColor="@color/first_blue"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:visibility="invisible"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="400dp" />
 

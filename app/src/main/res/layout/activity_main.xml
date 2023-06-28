@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_section_rectangle_light_theme"
         app:itemIconTint="@color/first_blue"
-        app:itemTextColor="@color/theme_white"
+        app:itemTextColor="@color/first_blue"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
