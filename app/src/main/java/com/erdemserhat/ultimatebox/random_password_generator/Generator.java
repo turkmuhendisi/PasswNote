@@ -93,48 +93,35 @@ public class Generator {
             text += character;
         }
 
+        boolean tempIsNumerical = this.isNumerical; // değerleri tutması için geçici değişkenler tanımlandı
+        boolean tempIsSpecialCharacter = this.isSpecialCharacter;
+        boolean tempIsCharacter = this.isCharacter;
+
         while (password.length() != passwordLength) {
             int randomIx = (int) (Math.random() * text.length());
-            password += text.charAt(randomIx);
+            char randomChar = text.charAt(randomIx);
 
-            if (password.length()==passwordLength & (this.isNumerical)==true) {
-                boolean control = false;
-                for (int i = 0; i < password.length() ; i++) {
-                    for (int j = 0; j < numerical.length(); j++) {
-                        if (password.charAt(i)==numerical.charAt(j)) {
-                            control = true;
-                            break;
-                        }
-                    }
-                }
-                if (!control) { password = ""; }
-            }
+            // Karakteri şifreye ekle
+            password += randomChar;
 
-            if (password.length()==passwordLength & (this.isSpecialCharacter)==true) {
-                boolean control = false;
-                for (int i = 0; i < password.length() ; i++) {
-                    for (int j = 0; j < specialCharacter.length(); j++) {
-                        if (password.charAt(i)==specialCharacter.charAt(j)) {
-                            control = true;
-                            break;
-                        }
-                    }
-                }
-                if (!control) { password = ""; }
+            // Şifrede karakterin bulunup bulunmadığını kontrol et
+            if (tempIsNumerical==true && numerical.contains(String.valueOf(randomChar))) {
+                tempIsNumerical = false; // düzenlendi
             }
+            if (tempIsSpecialCharacter==true && specialCharacter.contains(String.valueOf(randomChar))) {
+                tempIsSpecialCharacter = false; // düzenlendi
+            }
+            if (tempIsCharacter==true && character.contains(String.valueOf(randomChar))) {
+                tempIsCharacter = false; // düzenlendi
+            }
+        }
 
-            if (password.length()==passwordLength & (this.isCharacter)==true) {
-                boolean control = false;
-                for (int i = 0; i < password.length() ; i++) {
-                    for (int j = 0; j < character.length(); j++) {
-                        if (password.charAt(i)==character.charAt(j)) {
-                            control = true;
-                            break;
-                        }
-                    }
-                }
-                if (!control) { password = ""; }
-            }
+        // İstenen karakterleri içermiyorsa şifreyi yeniden oluştur
+        if (tempIsNumerical==true || tempIsSpecialCharacter==true || tempIsCharacter==true) {
+            tempIsNumerical = this.isNumerical; // geçici değişkenlerin değerleri orijinal değerler tekrar atanarak sıfırlandı
+            tempIsSpecialCharacter = this.isSpecialCharacter;
+            tempIsCharacter = this.isCharacter;
+            password = createPassword();
         }
 
         return password;
