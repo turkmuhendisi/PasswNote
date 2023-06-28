@@ -21,4 +21,11 @@
     <color name="second_blue">#3F72AF</color>
     <color name="third_blue">#DBE2EF</color>
     <color name="theme_white">#F9F7F7</color>
+    <color name="theme_white_40Low">#66F9F7F7</color>
+
+    <!--button colors -->
+    <color name="on_color">#112D4E</color>
+    <color name="off_color">#F9F7F7</color>
+    <color name="btn_color_light">#803F72AF</color>
+
 </resources>

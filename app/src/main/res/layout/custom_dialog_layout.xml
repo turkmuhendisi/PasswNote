@@ -25,14 +25,14 @@
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_send_background"
+            android:background="@drawable/button_light"
             android:text="Save" />
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_send_background"
+            android:background="@drawable/button_light"
             android:text="Cancel" />
 
         <Space
