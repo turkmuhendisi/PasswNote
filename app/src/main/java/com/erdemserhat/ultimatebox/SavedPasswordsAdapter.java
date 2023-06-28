@@ -128,6 +128,7 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
         holder.itemView.findViewById(R.id.editButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Reading related data set number
                 Password passwordTemp = PasswordList.getInstance().getPasswordList().get(position);
                 CustomDialogEditMenu customDialogEditMenu = new CustomDialogEditMenu(view.getContext());
                 customDialogEditMenu.setCustomDialogEditMenuListener(new CustomDialogEditMenuListener() {
@@ -142,6 +143,7 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
                        alBuilder.setPositiveButton("I'm sure", new DialogInterface.OnClickListener() {
                            //If the user is sure about modifications.
 
+                           @SuppressLint("NotifyDataSetChanged")
                            @Override
                            public void onClick(DialogInterface dialogInterface, int i) {
                                //Getting some necessary info.

@@ -10,8 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.erdemserhat.ultimatebox.random_password_generator.SyncronizationAdapter;
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SettingsFragment#newInstance} factory method to
@@ -65,11 +63,6 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
-        recyclerView.setLayoutManager(layoutManager);
-        SyncronizationAdapter adapter = new SyncronizationAdapter();
-        recyclerView.setAdapter(adapter);
 
         // Inflate the layout for this fragment
         return view;
