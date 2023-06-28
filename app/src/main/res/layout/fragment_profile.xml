@@ -3,97 +3,104 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/third_blue"
     android:layout_height="match_parent"
+    android:background="@color/third_blue"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/round_section_rectangle_light_theme"
-        android:orientation="vertical"
-        android:padding="15dp">
-
-        <!-- Log Out -->
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-            <ImageView
-                android:id="@+id/logOutIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_logo_background_light"
-                android:src="@drawable/logout_icon"
-                app:tint="@color/first_blue" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                app:shapeAppearanceOverlay="@style/circular"
+                app:srcCompat="@drawable/senseijpg" />
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/logOutIcon"
-                android:text="Log Out"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:text="Samet Berkant Koca"
+                android:textColor="@color/first_blue"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <ImageView
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/right_arrow_icon"
-                app:tint="@color/first_blue"/>
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Premium User"
+                android:textColor="@color/second_blue_50Low"
+                android:textSize="12sp" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="-220dp"
-        app:shapeAppearanceOverlay="@style/circular"
-        app:srcCompat="@drawable/senseijpg"
-        />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appCompatButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_light"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="Edit Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/first_blue" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="-110dp"
-        android:text="Premium User"
-        android:textColor="@color/second_blue_50Low"
-        android:textSize="12sp" />
+        </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="-70dp"
-        android:background="@drawable/button_light"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        android:text="Edit Profile"
-        android:textAllCaps="false" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_section_rectangle_light_theme"
+            android:padding="15dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="25dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="-140dp"
-        android:text="Samet Berkant Koca"
-        android:textColor="@color/first_blue"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <!-- Log Out -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logOutIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_logo_background_light"
+                    android:padding="12dp"
+                    android:src="@drawable/logout_icon"
+                    app:tint="@color/first_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/logOutIcon"
+                    android:text="Log Out"
+                    android:textColor="@color/first_blue"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/right_arrow_icon"
+                    app:tint="@color/first_blue" />
+            </RelativeLayout>
+        </LinearLayout>
 
 </FrameLayout>
