@@ -17,6 +17,7 @@
     <color name="security">#D95F69</color>
 
     <color name="first_blue">#112D4E</color>
+    <color name="first_blue_50Low">#80112D4E</color>
     <color name="second_blue_50Low">#803F72AF</color>
     <color name="second_blue">#3F72AF</color>
     <color name="third_blue">#DBE2EF</color>
