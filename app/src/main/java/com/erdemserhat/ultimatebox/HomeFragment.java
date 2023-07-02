@@ -1,47 +1,23 @@
 package com.erdemserhat.ultimatebox;
 
-import static android.content.Context.CLIPBOARD_SERVICE;
-import static androidx.core.content.ContextCompat.getSystemService;
-
-import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.erdemserhat.ultimatebox.random_password_generator.*;
-
-import android.content.ClipboardManager;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
-import android.widget.AdapterView;
-import android.widget.Toast;
-
-import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.widget.SeekBar;
+import android.widget.Toast;
 
-import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
+import androidx.fragment.app.Fragment;
+
 import com.erdemserhat.ultimatebox.databinding.FragmentHomeBinding;
+import com.erdemserhat.ultimatebox.random_password_generator.Generator;
 
 import java.util.Date;
-import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,6 +70,7 @@ public class HomeFragment extends Fragment {
         binding.characterSwitch.setChecked(true);
         binding.numberSwitch.setChecked(true);
         binding.specialSwitch.setChecked(true);
+        binding.textView2.setText("password length - 4");
 
 
         //When generate button is clicked by the user;
@@ -101,7 +78,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //these processes will be run..
-                generate(v);
+                generate(v,binding.seekBar.getProgress());
             }
         });
 
@@ -183,6 +160,23 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                binding.textView2.setText("password length - " + progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
 
     }
 
@@ -237,7 +231,7 @@ public class HomeFragment extends Fragment {
     /**
      * @param view
      */
-    public void generate(View view) {
+    public void generate(View view, int pwLength) {
         //Animation
         view.startAnimation(buttonClick);
         binding.saveButton.setVisibility(View.VISIBLE);
@@ -248,15 +242,11 @@ public class HomeFragment extends Fragment {
         boolean isSpecialCharacter = binding.specialSwitch.isChecked();
         //Deprecated
         //String pwLengthTemp = binding.pwLenght.getText().toString();
-        String pwLengthTemp = String.valueOf(12);
+        //String pwLengthTemp = String.valueOf(12);
 
         //If password length(pwLength) is empty, 32 value is taken as default, otherwise a different value should be entered from user so this value is kept.
-        int passwordLength;
-        if (pwLengthTemp.isEmpty()) {
-            passwordLength = 16;
-        } else {
-            passwordLength = Integer.parseInt(pwLengthTemp);
-        }
+        int passwordLength = pwLength ;
+
 
         //If at least one option is selected by user, if body will be run.
         if (isCharacter || isSpecialCharacter || isNumerical) {

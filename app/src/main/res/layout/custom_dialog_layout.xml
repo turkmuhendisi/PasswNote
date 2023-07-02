@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Write a title for password"
+        android:textColor="@color/first_blue"
         android:textColorHint="@color/first_blue"/>
 
 

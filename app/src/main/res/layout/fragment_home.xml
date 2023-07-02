@@ -118,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:min="4"
-            android:max="32"
+            android:max="16"
             android:progress="4"
             android:progressBackgroundTint="@color/first_blue"
             android:progressTint="@color/second_blue"
@@ -160,7 +160,7 @@
             android:textStyle="italic"
             tools:layout_editor_absoluteX="25dp"
             tools:layout_editor_absoluteY="458dp"
-            android:visibility=""/>
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/saveButton"
