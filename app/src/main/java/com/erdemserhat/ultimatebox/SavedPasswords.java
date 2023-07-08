@@ -91,19 +91,6 @@ public class SavedPasswords extends Fragment {
         //Setting adapter
         recyclerView.setAdapter(adapter);
 
-
-
-
-
-
-
-        return view;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
         View addCustomPasswordButton = view.getRootView().findViewById(R.id.addCustomPasswordButton);
         addCustomPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +103,7 @@ public class SavedPasswords extends Fragment {
                         String title = addCustomPasswordDialog.getPasswordContentEditText().getText().toString();
                         String content = addCustomPasswordDialog.getPasswordContentEditText().getText().toString();
                         if(title.isBlank() || title.isBlank() || content.isBlank() || content.isBlank()){
-                            Toast.makeText(view.getContext(),"Please enter valid values",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(requireContext(),"Please enter valid values",Toast.LENGTH_SHORT).show();
                         }else{
                             //When values are valid below processes will be executed....
                             DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
@@ -126,7 +113,7 @@ public class SavedPasswords extends Fragment {
                             contentValues.put("content",content);
                             database.insert("passwords",null,contentValues);
                             databaseHelper.updatePasswordData(view.getContext());
-                            Toast.makeText(view.getContext(),"The password has been saved",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(view.getContext().getApplicationContext(),"The password has been saved",Toast.LENGTH_SHORT).show();
                             addCustomPasswordDialog.cancel();
 
 
@@ -147,6 +134,21 @@ public class SavedPasswords extends Fragment {
             }
         });
 
+
+
+
+
+
+
+
+
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
 
 
