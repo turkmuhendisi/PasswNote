@@ -100,7 +100,7 @@ public class SavedPasswords extends Fragment {
                 addCustomPasswordDialog.setCustomDialogListener(new CustomDialogListener() {
                     @Override
                     public void onSaveClicked() {
-                        String title = addCustomPasswordDialog.getPasswordContentEditText().getText().toString();
+                        String title = addCustomPasswordDialog.getPasswordTitleEditText().getText().toString();
                         String content = addCustomPasswordDialog.getPasswordContentEditText().getText().toString();
                         if(title.isBlank() || title.isBlank() || content.isBlank() || content.isBlank()){
                             //Toast.makeText(requireContext(),"Please enter valid values",Toast.LENGTH_SHORT).show();
