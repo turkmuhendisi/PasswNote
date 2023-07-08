@@ -2,6 +2,7 @@ package com.erdemserhat.ultimatebox;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -11,9 +12,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,11 +35,35 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+
+        /*SwitchMaterial themeButton = findViewById(R.id.themeButton);
+        //Objects.requireNonNull(getSupportActionBar()).setTitle("LIGHT-NIGHT MODE SWITCH");
+        themeButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    buttonView.setText("Night Mode");
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    buttonView.setText("Light Mode");
+                }
+            }
+        });
+
+        boolean isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
+        themeButton.setChecked(isNightModeOn);
+        if (isNightModeOn) {
+            themeButton.setText("Night Mode");
+        } else {
+            themeButton.setText("Light Mode");
+        }*/
+
+
         //Going to HomeFragment.xml and updating database whenever app is started.
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
         databaseHelper.updatePasswordData(getApplicationContext());
         changeFragment(new HomeFragment());
-
 
         /**
          * SetOnClickListener for Navigation Menu....
@@ -62,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
 
-
-
             }
             return true;
         });
@@ -73,46 +102,45 @@ public class MainActivity extends AppCompatActivity {
         //Deprecated Feature
 /**
 
-            try{
-                DatabaseHelper databaseHelper = DatabaseHelper.getInstance(this.getApplicationContext());
-                SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
+ try{
+ DatabaseHelper databaseHelper = DatabaseHelper.getInstance(this.getApplicationContext());
+ SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+ ContentValues values = new ContentValues();
 
-                values.put("content", "example pas21212sword");
-                values.put("title", "ex title");
-                values.put("date", "24 jun");
+ values.put("content", "example pas21212sword");
+ values.put("title", "ex title");
+ values.put("date", "24 jun");
 
-                sqLiteDatabase.insert("passwords", null, values);
-
-
-
-
-                Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM passwords", null);
-
-                int contentIx=cursor.getColumnIndex("content");
-                int titleIx=cursor.getColumnIndex("title");
-                int dateIx=cursor.getColumnIndex("date");
-                int idIx=cursor.getColumnIndex("id");
-
-                while(cursor.moveToNext()){
-                    System.out.println("Content: "+cursor.getString(contentIx));
-                    System.out.println("Title: "+cursor.getString(titleIx));
-                    System.out.println("Date: "+cursor.getString(dateIx));
-                    System.out.println("Id: " +cursor.getInt(idIx));
-                    System.out.println("---------------------------------------------");
-
-
-                }
+ sqLiteDatabase.insert("passwords", null, values);
 
 
 
 
-            }catch (Exception e){
-                e.printStackTrace();
+ Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM passwords", null);
 
-            }
-*/
+ int contentIx=cursor.getColumnIndex("content");
+ int titleIx=cursor.getColumnIndex("title");
+ int dateIx=cursor.getColumnIndex("date");
+ int idIx=cursor.getColumnIndex("id");
 
+ while(cursor.moveToNext()){
+ System.out.println("Content: "+cursor.getString(contentIx));
+ System.out.println("Title: "+cursor.getString(titleIx));
+ System.out.println("Date: "+cursor.getString(dateIx));
+ System.out.println("Id: " +cursor.getInt(idIx));
+ System.out.println("---------------------------------------------");
+
+
+ }
+
+
+
+
+ }catch (Exception e){
+ e.printStackTrace();
+
+ }
+ */
 
 
     }

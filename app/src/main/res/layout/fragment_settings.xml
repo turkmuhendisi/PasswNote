@@ -76,14 +76,14 @@
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/nightModeIcon"/>
 
-                    <androidx.appcompat.widget.SwitchCompat
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/themeButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:switchMinWidth="50dp"
-                        android:theme="@style/nightModeSwitch"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        />
                 </RelativeLayout>
 
                 <!-- Notifications-->

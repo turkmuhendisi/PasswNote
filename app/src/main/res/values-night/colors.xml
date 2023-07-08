@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#1B023B</color>
+    <color name="secondary">#FF03DAC5</color>
+
+    <color name="night_mode">#6124B1</color>
+    <color name="notifications">#13B2C3</color>
+    <color name="private_account">#E6A326</color>
+    <color name="security">#D95F69</color>
+
+    <color name="first_blue">#112D4E</color>
+    <color name="first_blue_50Low">#80112D4E</color>
+    <color name="second_blue_50Low">#803F72AF</color>
+    <color name="second_blue">#3F72AF</color>
+    <color name="third_blue">#59616F</color>
+    <color name="theme_white">#F9F7F7</color>
+    <color name="theme_white_40Low">#66F9F7F7</color>
+
+    <!--button colors -->
+    <color name="on_color">#112D4E</color>
+    <color name="off_color">#F9F7F7</color>
+    <color name="btn_color_light">#803F72AF</color>
+
+</resources>
