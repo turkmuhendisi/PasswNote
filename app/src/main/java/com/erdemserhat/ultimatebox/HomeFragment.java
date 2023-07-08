@@ -73,6 +73,7 @@ public class HomeFragment extends Fragment {
         binding.textView2.setText("password length - 4");
 
 
+
         //When generate button is clicked by the user;
         binding.generateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +95,7 @@ public class HomeFragment extends Fragment {
                 clipboardManager.setText(password);
                 Toast.makeText(requireContext(), R.string.infoCopiedText, Toast.LENGTH_SHORT).show();
                 return true;
+
             }
         });
 
