@@ -1,5 +1,9 @@
 package com.erdemserhat.ultimatebox;
 
+import static android.content.Context.CLIPBOARD_SERVICE;
+import static androidx.core.content.ContentProviderCompat.requireContext;
+import static androidx.core.content.ContextCompat.getSystemService;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -207,17 +211,20 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
             }
         });
 
-        // Copy Button
-        /*holder.itemView.findViewById(R.id.copyIcon).setOnClickListener(new View.OnClickListener() {
+        //Copy Icon Edition
+
+        holder.itemView.findViewById(R.id.copyIcon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipboardManager clipboard = (ClipboardManager) (view.getContext()).getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("Copy", password.getContent().toString());
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(SavedPasswords.this,"Copied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "Copied", Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
     }
+
+
 
     @Override
     public int getItemCount() {
