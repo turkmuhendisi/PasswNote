@@ -3,6 +3,9 @@ package com.erdemserhat.ultimatebox;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
@@ -10,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -202,6 +206,17 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
                 });customDialogEditMenu.show();
             }
         });
+
+        // Copy Button
+        /*holder.itemView.findViewById(R.id.copyIcon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Copy", password.getContent().toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(SavedPasswords.this,"Copied", Toast.LENGTH_SHORT).show();
+            }
+        });*/
     }
 
     @Override

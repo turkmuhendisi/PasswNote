@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/third_blue"
+    android:background="@color/bg_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
@@ -25,7 +25,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/allowChar"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="18sp"
             android:textStyle="bold"
             android:theme="@style/nightModeSwitch"
@@ -46,7 +46,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/allowNum"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="18sp"
             android:textStyle="bold"
             android:theme="@style/nightModeSwitch"
@@ -65,7 +65,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/allowSpecialChar"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="18sp"
             android:textStyle="bold"
             android:theme="@style/nightModeSwitch"
@@ -88,7 +88,7 @@
             android:padding="10dp"
             android:text="@string/lblEnterPassword"
             android:textAlignment="center"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -120,9 +120,9 @@
             android:min="4"
             android:max="16"
             android:progress="4"
-            android:progressBackgroundTint="@color/first_blue"
-            android:progressTint="@color/second_blue"
-            android:thumbTint="@color/first_blue"/>
+            android:progressBackgroundTint="@color/main_text_color"
+            android:progressTint="@color/content_color"
+            android:thumbTint="@color/main_text_color"/>
 
 
         <Button
@@ -136,7 +136,7 @@
             android:onClick="generate"
             android:padding="10dp"
             android:text="@string/btnPassword"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="12sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="31dp"
@@ -154,7 +154,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textIsSelectable="true"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -171,7 +171,7 @@
             android:background="@drawable/button_light"
             android:padding="10dp"
             android:text="Save"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="12sp"
             android:textStyle="bold"
             android:visibility="invisible"

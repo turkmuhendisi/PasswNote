@@ -16,17 +16,16 @@
     <color name="private_account">#E6A326</color>
     <color name="security">#D95F69</color>
 
-    <color name="first_blue">#112D4E</color>
-    <color name="first_blue_50Low">#80112D4E</color>
-    <color name="second_blue_50Low">#803F72AF</color>
-    <color name="second_blue">#3F72AF</color>
-    <color name="third_blue">#59616F</color>
-    <color name="theme_white">#F9F7F7</color>
+    <color name="main_text_color">#F1F1F3</color>
+    <color name="subtitle_text_color">#BFBEE3</color>
+    <color name="section_color">#28272C</color>
+    <color name="content_color">#9092DA</color>
+    <color name="bg_color">#17161B</color>
     <color name="theme_white_40Low">#66F9F7F7</color>
 
     <!--button colors -->
-    <color name="on_color">#112D4E</color>
-    <color name="off_color">#F9F7F7</color>
-    <color name="btn_color_light">#803F72AF</color>
+    <color name="on_color">#9092DA</color>
+    <color name="off_color">#F1F1F3</color>
+    <color name="btn_color_light">#BFBEE3</color>
 
 </resources>

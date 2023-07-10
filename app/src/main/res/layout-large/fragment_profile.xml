@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/third_blue"
+    android:background="@color/bg_color"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:text="Samet Berkant Koca"
-                android:textColor="@color/first_blue"
+                android:textColor="@color/main_text_color"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:text="Premium User"
-                android:textColor="@color/second_blue_50Low"
+                android:textColor="@color/content_color"
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -59,7 +59,7 @@
                 android:text="Edit Profile"
                 android:textAllCaps="false"
                 android:textSize="16sp"
-                android:textColor="@color/first_blue" />
+                android:textColor="@color/main_text_color" />
 
         </LinearLayout>
 
@@ -83,7 +83,7 @@
                     android:background="@drawable/round_logo_background_light"
                     android:padding="12dp"
                     android:src="@drawable/logout_icon"
-                    app:tint="@color/first_blue" />
+                    app:tint="@color/main_text_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
                     android:layout_toEndOf="@+id/logOutIcon"
                     android:text="Log Out"
                     android:textSize="16sp"
-                    android:textColor="@color/first_blue"
+                    android:textColor="@color/main_text_color"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -102,7 +102,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_icon"
-                    app:tint="@color/first_blue" />
+                    app:tint="@color/main_text_color" />
             </RelativeLayout>
         </LinearLayout>
 

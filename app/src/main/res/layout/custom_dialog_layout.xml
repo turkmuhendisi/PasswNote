@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/theme_white"
+    android:background="@drawable/round_section_rectangle_light_theme"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Write a title for password"
-        android:textColor="@color/first_blue"
-        android:textColorHint="@color/first_blue"/>
+        android:textColor="@color/main_text_color"
+        android:textColorHint="@color/main_text_color"/>
 
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:background="@drawable/button_light"
             android:layout_marginRight="5dp"
             android:text="Save"
-            android:textColor="@color/first_blue"/>
+            android:textColor="@color/main_text_color"/>
 
         <Button
             android:id="@+id/cancelButton"
@@ -41,7 +41,7 @@
             android:background="@drawable/button_light"
             android:layout_marginLeft="5dp"
             android:text="Cancel"
-            android:textColor="@color/first_blue"/>
+            android:textColor="@color/main_text_color"/>
 
         <Space
             android:layout_width="wrap_content"

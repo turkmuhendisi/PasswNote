@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="500dp"
     android:layout_height="wrap_content"
-    android:background="@color/theme_white"
+    android:background="@drawable/round_section_rectangle_light_theme"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -21,7 +21,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:layout_margin="10dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="Title :"
-                android:textColor="@color/first_blue"
+                android:textColor="@color/main_text_color"
                 android:textSize="20sp"></TextView>
 
             <EditText
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="Facebook"
-                android:textColor="@color/first_blue"
+                android:textColor="@color/main_text_color"
                 android:textSize="20sp">
 
             </EditText>
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="Content :"
-                android:textColor="@color/first_blue"
+                android:textColor="@color/main_text_color"
                 android:textSize="20sp">
 
             </TextView>
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="R6tKUscEHWz6"
-                android:textColor="@color/first_blue"
+                android:textColor="@color/main_text_color"
                 android:textSize="20sp">
 
             </EditText>
@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SAVE"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:background="@drawable/button_light"
             android:layout_marginRight="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:background="@drawable/button_light"
             android:layout_marginLeft="5dp"
             app:layout_constraintBottom_toBottomOf="parent"

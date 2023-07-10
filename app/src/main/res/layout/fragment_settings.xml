@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/third_blue"
+    android:background="@color/bg_color"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -18,14 +18,14 @@
             android:layout_height="50dp"
             android:src="@drawable/back_btn"
             android:padding="14dp"
-            app:tint="@color/first_blue" />
+            app:tint="@color/main_text_color" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Settings"
-            android:textColor="@color/first_blue"
+            android:textColor="@color/main_text_color"
             android:textSize="18sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -64,7 +64,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/night_mode_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue" />
+                        app:tint="@color/main_text_color" />
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -72,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="Night Mode"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/nightModeIcon"/>
 
@@ -83,6 +83,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:switchMinWidth="50dp"
+                        android:theme="@style/nightModeSwitch"
                         />
                 </RelativeLayout>
 
@@ -99,7 +100,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/text_size_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -107,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="Text Size"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/notificationIcon" />
 
@@ -117,7 +118,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/right_arrow_icon"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
                 <!-- Security -->
@@ -133,7 +134,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/security_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -141,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="Security &amp; Privacy"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/securityIcon"/>
 
@@ -151,7 +152,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/right_arrow_icon"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
                 <!-- Text Size -->
@@ -167,14 +168,14 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/privacy_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                     <TextView
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="Import / Export Data"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/textSizeIcon"/>
 
@@ -186,7 +187,7 @@
                         android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
                 <!-- Languages -->
@@ -202,7 +203,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/language_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -210,7 +211,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="Languages"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/languageIcon"/>
 
@@ -220,7 +221,7 @@
                         android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -245,7 +246,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/message_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -253,7 +254,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="Send us a message"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/messageIcon"/>
 
@@ -263,7 +264,7 @@
                         android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
                 <!-- About Us -->
@@ -279,7 +280,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/about_us_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -287,7 +288,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="About Us"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/aboutUsIcon"/>
 
@@ -297,7 +298,7 @@
                         android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
                 <!-- FAQs -->
@@ -313,7 +314,7 @@
                         android:background="@drawable/round_logo_background_light"
                         android:src="@drawable/faq_icon"
                         android:padding="12dp"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
@@ -321,7 +322,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="FAQs"
-                        android:textColor="@color/first_blue"
+                        android:textColor="@color/main_text_color"
                         android:textStyle="bold"
                         android:layout_toEndOf="@+id/faqIcon"/>
 
@@ -331,7 +332,7 @@
                         android:src="@drawable/right_arrow_icon"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:tint="@color/first_blue"/>
+                        app:tint="@color/main_text_color"/>
                 </RelativeLayout>
 
             </LinearLayout>
