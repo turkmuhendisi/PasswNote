@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -117,6 +119,7 @@ public class CustomDialogEditMenu extends Dialog {
         super.onCreate(savedInstanceState);
         //Setting class's content's view.
         setContentView(R.layout.custom_dialog_edit_menu);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         //Assigning the related views.
 

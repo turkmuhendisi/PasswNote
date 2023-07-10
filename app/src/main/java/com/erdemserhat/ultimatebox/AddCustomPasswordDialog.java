@@ -3,6 +3,8 @@ package com.erdemserhat.ultimatebox;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +32,7 @@ public class AddCustomPasswordDialog extends Dialog {
         super.onCreate(savedInstanceState);
         //Inflating the xml with current class
         setContentView(R.layout.add_custom_password_dialog);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         //Assigning the the Edit Texts.
 

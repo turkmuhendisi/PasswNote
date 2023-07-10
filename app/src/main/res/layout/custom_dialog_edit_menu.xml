@@ -8,10 +8,10 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,17 +20,17 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:textColor="@color/main_text_color"
-            android:layout_margin="10dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:text="Please edit the information as you wish"
+            android:textColor="@color/main_text_color"
             android:textSize="20sp"></TextView>
 
         <LinearLayout
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -57,8 +57,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -103,10 +103,10 @@
             android:id="@+id/saveEditMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_light"
             android:text="SAVE"
             android:textColor="@color/main_text_color"
-            android:background="@drawable/button_light"
-            android:layout_marginRight="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cancelEditMenu"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,10 +118,10 @@
             android:id="@+id/cancelEditMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_light"
             android:text="Cancel"
             android:textColor="@color/main_text_color"
-            android:background="@drawable/button_light"
-            android:layout_marginLeft="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/saveEditMenu"
@@ -131,8 +131,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
