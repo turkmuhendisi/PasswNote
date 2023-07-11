@@ -18,9 +18,12 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
+import com.erdemserhat.ultimatebox.rsa.Rsa;
+import com.erdemserhat.ultimatebox.rsa.TextChiper;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Objects;
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -141,6 +144,17 @@ public class MainActivity extends AppCompatActivity {
 
  }
  */
+        Rsa rsa = new Rsa(1);
+        TextChiper textChiper = new TextChiper(rsa);
+
+        System.out.println(textChiper.decryptText("6368,11536,1222,6475,11010,22530,"));
+        Random random = new Random(256345678);
+        System.out.println(random.nextInt(100));
+        System.out.println(random.nextInt(100));
+
+
+
+        ;
 
 
     }
@@ -155,6 +169,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
     }
+
+
 
 
 }
