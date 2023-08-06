@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -18,8 +20,6 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.erdemserhat.ultimatebox.databinding.ActivityMainBinding;
-import com.erdemserhat.ultimatebox.rsa.Rsa;
-import com.erdemserhat.ultimatebox.rsa.TextChiper;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Objects;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
+        //area for work
 
         /*SwitchMaterial themeButton = findViewById(R.id.themeButton);
         //Objects.requireNonNull(getSupportActionBar()).setTitle("LIGHT-NIGHT MODE SWITCH");
@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
 
+                /**
+
                 case R.id.profile:
                     //When profile icon is clicked on the nav bar.
                     changeFragment(new ProfileFragment());
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(new SettingsFragment());
 
                     break;
+                 */
 
                 case R.id.home:
                     changeFragment(new HomeFragment());
@@ -144,17 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
  }
  */
-        Rsa rsa = new Rsa(1);
-        TextChiper textChiper = new TextChiper(rsa);
 
-        System.out.println(textChiper.decryptText("6368,11536,1222,6475,11010,22530,"));
-        Random random = new Random(256345678);
-        System.out.println(random.nextInt(100));
-        System.out.println(random.nextInt(100));
-
-
-
-        ;
 
 
     }
