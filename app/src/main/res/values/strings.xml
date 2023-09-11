@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Random Password Generator</string>
+    <string name="app_name" translatable="false">PasswNote</string>
     <string name="btnPassword">Generate Password</string>
     <string name="allowChar">Allow Characters</string>
     <string name="allowNum">Allow Numbers</string>
