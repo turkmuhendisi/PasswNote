@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PasswNote</string>
+    <string name="app_name">Random Password Generator</string>
     <string name="btnPassword">Şifre Oluştur</string>
     <string name="allowChar">Karakter</string>
     <string name="allowNum">Numerik Karakter</string>
@@ -13,19 +13,5 @@
     <string name="infoDigitLess">Şifre 4 karakterden az olamaz</string>
     <string name="infoDigitMore">Şifre 10.000 karakterden fazla olamaz</string>
     <string name="infoRadioButton">Lütfen bir seçeneği işaretleyin</string>
-    <string name="homeButton">Ana Menü</string>
-    <string name="savedButton">Kayıtlı Şifreler</string>
-    <string name="passwordTitle">Başlık:</string>
-    <string name="passwordContent">Şifre:</string>
-    <string name="saveText">Kaydet</string>
-    <string name="cancelText">İptal Et</string>
-    <string name="editMenuTitle">Düzenle</string>
-    <string name="enterTitle">Şifre başlığını girin</string>
-    <string name="editProfileText">Profili Düzenle</string>
-    <string name="userStatus">Premium Kullanıcı</string>
-    <string name="logoutText">Çıkış Yap</string>
-    <string name="savedText">Kayıtlı Şifreler</string>
-    <string name="addPasswordText">Şifre Ekle</string>
-    <string name="settingsText">Ayarlar</string>
     <string name="sync_text"><u>Senkronizasyon</u></string>
 </resources>

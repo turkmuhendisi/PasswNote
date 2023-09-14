@@ -12,20 +12,6 @@
     <string name="infoDigitLess">Your password cannot be less then 4 digits</string>
     <string name="infoDigitMore">Your password cannot be more then 10.000 digits</string>
     <string name="infoRadioButton">Please select at least one option</string>
-    <string name="homeButton">Home</string>
-    <string name="savedButton">Saved</string>
-    <string name="passwordTitle">Title:</string>
-    <string name="passwordContent">Password:</string>
-    <string name="saveText">Save</string>
-    <string name="cancelText">Cancel</string>
-    <string name="editMenuTitle">Edit Menu</string>
-    <string name="enterTitle">Enter password title</string>
-    <string name="editProfileText">Edit Profile</string>
-    <string name="userStatus">Premium User</string>
-    <string name="logoutText">Log Out</string>
-    <string name="savedText">Saved Passwords</string>
-    <string name="addPasswordText">Add Password</string>
-    <string name="settingsText">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="sync_text"><u>Synchronization</u></string>
