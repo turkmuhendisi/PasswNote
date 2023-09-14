@@ -2,7 +2,7 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item android:title="@string/homeButton"
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"
         />
@@ -19,7 +19,7 @@
         android:title="Settings" />
         -->
 
-    <item android:title="Saved"
+    <item android:title="@string/savedButton"
         android:id="@+id/savedPasswords"
         android:icon="@drawable/baseline_password_24"/>
 

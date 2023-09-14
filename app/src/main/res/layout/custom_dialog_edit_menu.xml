@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="Please edit the information as you wish"
+            android:text="@string/editMenuTitle"
             android:textColor="@color/main_text_color"
             android:textSize="20sp"></TextView>
 
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Title :"
+                android:text="@string/passwordTitle"
                 android:textColor="@color/main_text_color"
                 android:textSize="20sp"></TextView>
 
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Content :"
+                android:text="@string/passwordContent"
                 android:textColor="@color/main_text_color"
                 android:textSize="20sp">
 
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:background="@drawable/button_light"
-            android:text="SAVE"
+            android:text="@string/saveText"
             android:textColor="@color/main_text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cancelEditMenu"
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:background="@drawable/button_light"
-            android:text="Cancel"
+            android:text="@string/cancelText"
             android:textColor="@color/main_text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

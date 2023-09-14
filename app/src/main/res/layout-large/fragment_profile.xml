@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:text="Premium User"
+                android:text="@string/userStatus"
                 android:textColor="@color/content_color"
                 android:textSize="16sp" />
 
@@ -56,7 +56,7 @@
                 android:background="@drawable/button_light"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
-                android:text="Edit Profile"
+                android:text="@string/editProfileText"
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textColor="@color/main_text_color" />
@@ -91,7 +91,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@+id/logOutIcon"
-                    android:text="Log Out"
+                    android:text="@string/logoutText"
                     android:textSize="16sp"
                     android:textColor="@color/main_text_color"
                     android:textStyle="bold" />
