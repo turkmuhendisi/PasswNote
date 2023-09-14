@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
         binding.characterSwitch.setChecked(true);
         binding.numberSwitch.setChecked(true);
         binding.specialSwitch.setChecked(true);
-        binding.textView2.setText("password length - 4");
+        binding.textView2.setText("password length - 8");
 
 
 

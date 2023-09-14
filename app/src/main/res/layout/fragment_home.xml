@@ -6,177 +6,207 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        android:padding="10dp">
-
-        <Switch
-            android:id="@+id/character_switch"
+        android:layout_height="wrap_content">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/round_section_rectangle_light_theme"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/allowChar"
-            android:textColor="@color/main_text_color"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:theme="@style/nightModeSwitch"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="205dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml">
+            android:layout_marginBottom="30dp">
 
-        </Switch>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:text="Password Generator"
+                android:textColor="@color/main_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
-        <Switch
-            android:id="@+id/number_switch"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/round_section_rectangle_light_theme"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/allowNum"
-            android:textColor="@color/main_text_color"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:theme="@style/nightModeSwitch"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="133dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <Switch
-            android:id="@+id/special_switch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/round_section_rectangle_light_theme"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/allowSpecialChar"
-            android:textColor="@color/main_text_color"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:theme="@style/nightModeSwitch"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="266dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:clickable="false"
-            android:editable="false"
-            android:padding="10dp"
-            android:text="@string/lblEnterPassword"
-            android:textAlignment="center"
-            android:textColor="@color/main_text_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <!--Deprecated Feature
-        <EditText
-            android:id="@+id/pw_lenght"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/title_background"
-            android:hint="@string/infoDefaultLength"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="#F6F6F6"
-            android:textColorHint="#F6F6F6"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="17dp"
-            tools:layout_editor_absoluteY="337dp" />
-
-                                        -->
-
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:min="4"
-            android:max="16"
-            android:progress="4"
-            android:progressBackgroundTint="@color/main_text_color"
-            android:progressTint="@color/content_color"
-            android:thumbTint="@color/main_text_color"/>
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
-        <Button
-            android:id="@+id/generateButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_gravity="center"
-            android:background="@drawable/button_light"
-            android:onClick="generate"
-            android:padding="10dp"
-            android:text="@string/btnPassword"
-            android:textColor="@color/main_text_color"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="400dp" />
+            <Switch
+                android:id="@+id/character_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/round_section_rectangle_light_theme"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/allowChar"
+                android:textColor="@color/main_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:theme="@style/nightModeSwitch"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="205dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml">
+
+            </Switch>
+
+            <Switch
+                android:id="@+id/number_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/round_section_rectangle_light_theme"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/allowNum"
+                android:textColor="@color/main_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:theme="@style/nightModeSwitch"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="133dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <Switch
+                android:id="@+id/special_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/round_section_rectangle_light_theme"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/allowSpecialChar"
+                android:textColor="@color/main_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:theme="@style/nightModeSwitch"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="266dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:editable="false"
+                android:padding="10dp"
+                android:text="@string/lblEnterPassword"
+                android:textAlignment="center"
+                android:textColor="@color/main_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!--Deprecated Feature
+            <EditText
+                android:id="@+id/pw_lenght"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/title_background"
+                android:hint="@string/infoDefaultLength"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColor="#F6F6F6"
+                android:textColorHint="#F6F6F6"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="337dp" />
+
+                                            -->
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:min="4"
+                android:max="16"
+                android:progress="8"
+                android:progressBackgroundTint="@color/main_text_color"
+                android:progressTint="@color/content_color"
+                android:thumbTint="@color/main_text_color"
+
+                android:progressDrawable="@drawable/custom_seekbar"/>
 
 
-        <TextView
-            android:id="@+id/warning"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/round_section_rectangle_light_theme"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/main_text_color"
-            android:textIsSelectable="true"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="25dp"
-            tools:layout_editor_absoluteY="458dp"
-            android:visibility="invisible"/>
+            <Button
+                android:id="@+id/generateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_light"
+                android:onClick="generate"
+                android:padding="10dp"
+                android:text="@string/btnPassword"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="400dp" />
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/button_light"
-            android:padding="10dp"
-            android:text="Save"
-            android:textColor="@color/main_text_color"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:visibility="invisible"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="400dp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/round_section_rectangle_light_theme"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/main_text_color"
+                android:textIsSelectable="true"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="458dp"
+                android:visibility="invisible"/>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_light"
+                android:padding="10dp"
+                android:text="Save"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="400dp" />
+
+        </LinearLayout>
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
 </FrameLayout>
