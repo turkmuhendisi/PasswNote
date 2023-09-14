@@ -11,7 +11,7 @@
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write a title for password"
+        android:hint="@string/enterTitle"
         android:textColor="@color/main_text_color"
         android:textColorHint="@color/main_text_color"/>
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_light"
             android:layout_marginRight="5dp"
-            android:text="Save"
+            android:text="@string/saveText"
             android:textColor="@color/main_text_color"/>
 
         <Button
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_light"
             android:layout_marginLeft="5dp"
-            android:text="Cancel"
+            android:text="@string/cancelText"
             android:textColor="@color/main_text_color"/>
 
         <Space
