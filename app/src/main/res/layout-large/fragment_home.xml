@@ -137,16 +137,16 @@
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:min="4"
                 android:max="16"
+                android:min="4"
                 android:progress="8"
-                android:progressBackgroundTint="@color/main_text_color"
-                android:progressTint="@color/content_color"
-                android:thumbTint="@color/main_text_color"
 
-                android:progressDrawable="@drawable/custom_seekbar"/>
+                android:progressBackgroundTint="#262383"
+                android:progressDrawable="@drawable/custom_seekbar"
+                android:splitTrack="false"
+                android:thumb="@drawable/seekbar_icon"
 
-
+                />
             <Button
                 android:id="@+id/generateButton"
                 android:layout_width="wrap_content"
