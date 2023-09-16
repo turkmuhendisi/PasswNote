@@ -144,6 +144,32 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
                 customDialogEditMenu.setCustomDialogEditMenuListener(new CustomDialogEditMenuListener() {
                     @Override
                     public void onSaveClicked() {
+                        /**
+                         * TEMP CHANGES
+                         */
+
+                        String newTitle=customDialogEditMenu.getEditTitle().getText().toString();
+                        String newContent=customDialogEditMenu.getEditContent().getText().toString();
+                        String tableName="passwords";
+
+                        int passwordId = PasswordList.getInstance().getPasswordList().get(position).getPasswordId();
+                        //Updating dataset
+                        DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
+                        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+                        String sql = "UPDATE " + tableName + " SET title = ?, content = ? WHERE id = ?";
+                        SQLiteStatement statement = database.compileStatement(sql);
+                        statement.bindString(1,newTitle);
+                        statement.bindString(2,newContent);
+                        statement.bindLong(3,passwordId);
+                        statement.executeUpdateDelete();
+                        database.close();
+                        databaseHelper.updatePasswordData(view.getContext());
+                        notifyDataSetChanged();
+                        onCancelClicked();
+
+
+
+
                        AlertDialog.Builder alBuilder = new AlertDialog.Builder(view.getContext());
                        String title = "Are you sure about modifications ?";
                        String message ="Title will be ;" +"\n"+ passwordTemp.getTitle()+" --> "+customDialogEditMenu.getEditTitle().getText()+"\n"+
@@ -190,7 +216,7 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
                              });
                          }
                      });
-                     alBuilder.show();
+                    // alBuilder.show();
 
 
                     }
