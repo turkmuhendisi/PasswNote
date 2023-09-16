@@ -22,6 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/delete_warning_text"
         android:layout_margin="10dp"
         android:gravity="center"
         android:text="@string/deleteMessageText"
@@ -39,7 +40,7 @@
 
         <!-- Delete Button -->
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/deleteButton"
             android:text="@string/deleteText"
             android:background="@drawable/button_light"
             android:layout_width="wrap_content"
@@ -53,7 +54,7 @@
 
         <!-- Second Button -->
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/cancelButton"
             android:background="@drawable/button_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,5 +1,6 @@
 package com.erdemserhat.ultimatebox;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -35,6 +36,7 @@ import androidx.annotation.Nullable;
     // End of Contractors.
 
 
+        @SuppressLint("MissingInflatedId")
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
