@@ -28,6 +28,10 @@
     <string name="savedText">Kayıtlı Şifreler</string>
     <string name="addPasswordText">Şifre Ekle</string>
     <string name="settingsText">Ayarlar</string>
+    <string name="deleteWarningText">Emin misin?</string>
+    <string name="deleteMessageText">silindi!</string>
+    <string name="deleteText">SİL</string>
+    <string name="deleteActionWarningText">Bu işlem geri alınamaz!</string>
     <string name="sync_text"><u>Senkronizasyon</u></string>
 
     <!--String resources for delete dialog-->

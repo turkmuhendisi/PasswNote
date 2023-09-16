@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">PasswNote</string>
+    <string name="app_name">PasswNote</string>
     <string name="btnPassword">Generate Password</string>
     <string name="allowChar">Allow Characters</string>
     <string name="allowNum">Allow Numbers</string>
@@ -27,6 +27,10 @@
     <string name="savedText">Saved Passwords</string>
     <string name="addPasswordText">Add Password</string>
     <string name="settingsText">Settings</string>
+    <string name="deleteWarningText">Are you sure?</string>
+    <string name="deleteMessageText">will be deleted!</string>
+    <string name="deleteText">DELETE</string>
+    <string name="deleteActionWarningText">This action cannot be undone!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="sync_text"><u>Synchronization</u></string>
