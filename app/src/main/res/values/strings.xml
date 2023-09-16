@@ -4,7 +4,8 @@
     <string name="allowChar">Allow Characters</string>
     <string name="allowNum">Allow Numbers</string>
     <string name="allowSpecialChar">Allow Special Characters</string>
-    <string name="lblEnterPassword">password length</string>
+    <string name="lblEnterPassword">Password Length</string>
+    <string name="lblEnterPasswordFirst" translatable="false">Select Password Length (Default Length : 8)</string>
     <string name="infoDefaultLength">Default length is 32</string>
     <string name="lblHideResult">Your password will be here, click the Generate Password button</string>
     <string name="lblPasswordHere">Your random password↓</string>

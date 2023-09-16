@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
         binding.characterSwitch.setChecked(true);
         binding.numberSwitch.setChecked(true);
         binding.specialSwitch.setChecked(true);
-        binding.textView2.setText("password length - 8");
+        binding.textView2.setText(getResources().getString(R.string.lblEnterPasswordFirst));
 
 
 
@@ -167,7 +167,8 @@ public class HomeFragment extends Fragment {
         binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                binding.textView2.setText("password length - " + progress);
+
+                binding.textView2.setText(getResources().getString(R.string.lblEnterPassword)+" (" + progress+")" );
             }
 
             @Override
@@ -227,6 +228,8 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
 
     }
 

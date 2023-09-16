@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/delete_dialog"
+    android:orientation="vertical"
+    android:background="@drawable/round_section_rectangle_light_theme">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Are you sure ?"
+        android:textColor="@color/main_text_color"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Facebook 2023 will be deleted !"
+        android:textColor="@color/main_text_color"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <!-- Delete Button -->
+        <Button
+            android:id="@+id/button1"
+            android:text="Delete"
+            android:background="@drawable/bg_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Boşluk -->
+        <Space
+            android:id="@+id/space"
+            android:layout_width="100dp"
+            android:layout_height="0dp"/>
+
+        <!-- Second Button -->
+        <Button
+            android:id="@+id/button2"
+            android:background="@drawable/bg_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:text="This action cannot be undone  !"
+        android:textColor="#DC1708"
+        android:textSize="18sp"/>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

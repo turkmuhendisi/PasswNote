@@ -5,7 +5,8 @@
     <string name="allowChar">Karakter</string>
     <string name="allowNum">Numerik Karakter</string>
     <string name="allowSpecialChar">Özel Karakter</string>
-    <string name="lblEnterPassword">şifre uzunluğu</string>
+    <string name="lblEnterPassword">Şifre Uzunluğu</string>
+    <string name="lblEnterPasswordFirst" translatable="false">Şifre Uzunluğu Seçiniz (Varsayılan Uzunluk : 8)</string>
     <string name="infoDefaultLength">Varsayılan uzunluk 32 karakter</string>
     <string name="lblHideResult">Şifre oluşturmak için \"Şifre Oluştur\" isimli butona tıklayın.</string>
     <string name="lblPasswordHere">Oluşturulan Şifre↓</string>
