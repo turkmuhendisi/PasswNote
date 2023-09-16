@@ -4,6 +4,8 @@ import static android.content.Context.CLIPBOARD_SERVICE;
 import static androidx.core.content.ContentProviderCompat.requireContext;
 import static androidx.core.content.ContextCompat.getSystemService;
 
+import static java.security.AccessController.getContext;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -34,7 +36,7 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
     @Override
 
 
-    public PasswordHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PasswordHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         /*
          * Information about inflate method ;
@@ -65,7 +67,7 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PasswordHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(PasswordHolder holder, @SuppressLint("RecyclerView") int position) {
         //Get data
         PasswordList passwordList = PasswordList.getInstance();
         Password password = passwordList.getPasswordList().get(position);
@@ -73,31 +75,61 @@ public class SavedPasswordsAdapter extends RecyclerView.Adapter<SavedPasswordsAd
         holder.bind(password);
         //Delete Button Implementation
         holder.itemView.findViewById(R.id.deleteButton).setOnClickListener(new View.OnClickListener() {
-
-            //Implementing the onClick method to give as parameter to setOnClickListener method.
             @Override
             public void onClick(View view) {
-                CustomDialogEditMenu customDialogDeleteMenu = new CustomDialogEditMenu(view.getContext());
-                customDialogDeleteMenu.setCustomDialogEditMenuListener(new CustomDialogEditMenuListener() {
+                CustomDialogDeleteMenu customDialogDeleteMenu = new CustomDialogDeleteMenu(view.getContext());
+                    //customDialogDeleteMenu.getDeleteWarningText().setText("serhat");
+                customDialogDeleteMenu.setPasswordTitle(password.getTitle().toString());
+
+
+                customDialogDeleteMenu.setCustomDialogDeleteMenuListener(new CustomDialogDeleteMenuListener() {
                     @Override
-                    public void onSaveClicked() {
+                    public void onDelete() {
+
+                        //When delete button is clicked.
+                        DatabaseHelper databaseHelper = new DatabaseHelper(view.getContext());
+                        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+                        //Assigning the related password's id.
+                        int passwordId = password.getPasswordId();
+
+                        //Committing the delete instruction
+                        database.delete("passwords", "id = ?", new String[]{String.valueOf(passwordId)});
+                        //Deprecated Block either delete or exeSQL works.
+                        //database.execSQL("DELETE FROM passwords WHERE id ="+passwordId);
+
+                        //Closing database.
+                        database.close();
+
+                        //Updating the data with current database.
+                        databaseHelper.updatePasswordData(view.getContext());
+
+                        // removing the related item on the Recycler View.
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, passwordList.getLength());
+                        customDialogDeleteMenu.cancel();
 
                     }
 
-                    @Override
-                    public void onCancelClicked() {
-
-                    }
 
                     @Override
-                    public void onWriteOldInformation() {
+                    public void onCancel() {
+
+                        customDialogDeleteMenu.cancel();
 
                     }
                 });
 
+                customDialogDeleteMenu.show();
+
+
+
+
+
 
 
             }
+
+
         });
 
 
