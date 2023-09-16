@@ -104,7 +104,6 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:clickable="false"
-                android:editable="false"
                 android:padding="10dp"
                 android:text="@string/lblEnterPassword"
                 android:textAlignment="center"
@@ -141,12 +140,10 @@
                 android:max="16"
                 android:min="4"
                 android:progress="8"
-
                 android:progressBackgroundTint="#262383"
                 android:progressDrawable="@drawable/custom_seekbar"
                 android:splitTrack="false"
-                android:thumb="@drawable/seekbar_icon"
-
+                android:thumb="@drawable/hand_drag"
                 />
 
             <Button

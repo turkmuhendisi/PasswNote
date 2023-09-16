@@ -6,7 +6,7 @@
     <string name="allowNum">Numerik Karakter</string>
     <string name="allowSpecialChar">Özel Karakter</string>
     <string name="lblEnterPassword">Şifre Uzunluğu</string>
-    <string name="lblEnterPasswordFirst" translatable="false">Şifre Uzunluğu Seçiniz (Varsayılan Uzunluk : 8)</string>
+    <string name="lblEnterPasswordFirst">Şifre Uzunluğu Seçiniz (Varsayılan Uzunluk : 8)</string>
     <string name="infoDefaultLength">Varsayılan uzunluk 32 karakter</string>
     <string name="lblHideResult">Şifre oluşturmak için \"Şifre Oluştur\" isimli butona tıklayın.</string>
     <string name="lblPasswordHere">Oluşturulan Şifre↓</string>
@@ -35,9 +35,9 @@
     <string name="sync_text"><u>Senkronizasyon</u></string>
 
     <!--String resources for delete dialog-->
-    <string name="checkMessage">Emin misin ?</string>
+    <string name="checkMessage">Emin misin?</string>
     <string name="delete_prompt">silinecek..</string>
     <string name="delete_icon_text">Sil</string>
     <string name="cancel_icon_text">İptal Et</string>
-    <string name="warning_about_delete_action">Bu İşlem Geri Alınamaz !</string>
+    <string name="warning_about_delete_action">Bu İşlem Geri Alınamaz!</string>
 </resources>

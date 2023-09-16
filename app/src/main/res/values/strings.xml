@@ -5,7 +5,7 @@
     <string name="allowNum">Allow Numbers</string>
     <string name="allowSpecialChar">Allow Special Characters</string>
     <string name="lblEnterPassword">Password Length</string>
-    <string name="lblEnterPasswordFirst" translatable="false">Select Password Length (Default Length : 8)</string>
+    <string name="lblEnterPasswordFirst">Select Password Length (Default Length : 8)</string>
     <string name="infoDefaultLength">Default length is 32</string>
     <string name="lblHideResult">Your password will be here, click the Generate Password button</string>
     <string name="lblPasswordHere">Your random password↓</string>
@@ -36,9 +36,9 @@
     <string name="sync_text"><u>Synchronization</u></string>
 
     <!--String resources for delete dialog-->
-    <string name="checkMessage">Are you sure ?</string>
+    <string name="checkMessage">Are you sure?</string>
     <string name="delete_prompt">will be deleted..</string>
     <string name="delete_icon_text">Delete</string>
     <string name="cancel_icon_text">Cancel</string>
-    <string name="warning_about_delete_action">This action cannot be undone !</string>
+    <string name="warning_about_delete_action">This action cannot be undone!</string>
 </resources>

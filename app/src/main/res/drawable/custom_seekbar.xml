@@ -8,9 +8,14 @@
     </item>
 
     <item android:id="@android:id/progress">
-        <clip android:drawable="@drawable/bg_progress"/>
-
-
-
+        <clip>
+            <shape>
+                <corners android:radius="30dp" />
+                <gradient
+                android:endColor="@color/content_color"
+                android:startColor="@color/subtitle_text_color"
+                />
+            </shape>
+        </clip>
     </item>
 </layer-list>

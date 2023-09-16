@@ -6,10 +6,11 @@
     android:id="@+id/delete_dialog"
     android:layout_margin="10dp"
     android:orientation="vertical"
+    android:gravity="center"
     android:background="@drawable/round_section_rectangle_light_theme">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
@@ -20,7 +21,7 @@
     </TextView>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/delete_warning_text"
         android:layout_margin="10dp"
@@ -31,10 +32,12 @@
 
     </TextView>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
         android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content">
 
 
@@ -44,13 +47,9 @@
             android:text="@string/deleteText"
             android:background="@drawable/button_light"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"/>
 
-        <!-- Boşluk -->
-        <Space
-            android:id="@+id/space"
-            android:layout_width="100dp"
-            android:layout_height="0dp"/>
 
         <!-- Second Button -->
         <Button
@@ -58,14 +57,15 @@
             android:background="@drawable/button_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancelText" />
+            android:text="@string/cancelText"
+            android:layout_marginLeft="20dp"/>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:textStyle="italic"
