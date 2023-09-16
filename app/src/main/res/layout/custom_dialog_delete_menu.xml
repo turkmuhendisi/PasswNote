@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:text="Are you sure ?"
+        android:text="@string/checkMessage"
         android:textColor="@color/main_text_color"
         android:textSize="25sp">
 
@@ -20,10 +20,11 @@
 
     <TextView
         android:layout_width="match_parent"
+        android:id="@+id/delete_warning_text"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:text="Facebook 2023 will be deleted !"
+        android:text="@string/delete_prompt"
         android:textColor="@color/main_text_color"
         android:textSize="20sp">
 
@@ -38,8 +39,8 @@
 
         <!-- Delete Button -->
         <Button
-            android:id="@+id/button1"
-            android:text="Delete"
+            android:id="@+id/deleteButton"
+            android:text="@string/delete_icon_text"
             android:background="@drawable/bg_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -52,11 +53,11 @@
 
         <!-- Second Button -->
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/cancelButton"
             android:background="@drawable/bg_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel" />
+            android:text="@string/cancel_icon_text" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -68,7 +69,7 @@
         android:layout_margin="10dp"
         android:textStyle="italic"
         android:gravity="center"
-        android:text="This action cannot be undone  !"
+        android:text="@string/warning_about_delete_action"
         android:textColor="#DC1708"
         android:textSize="18sp"/>
 

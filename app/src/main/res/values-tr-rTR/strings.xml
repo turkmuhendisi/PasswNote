@@ -29,4 +29,11 @@
     <string name="addPasswordText">Şifre Ekle</string>
     <string name="settingsText">Ayarlar</string>
     <string name="sync_text"><u>Senkronizasyon</u></string>
+
+    <!--String resources for delete dialog-->
+    <string name="checkMessage">Emin misin ?</string>
+    <string name="delete_prompt">silinecek..</string>
+    <string name="delete_icon_text">Sil</string>
+    <string name="cancel_icon_text">İptal Et</string>
+    <string name="warning_about_delete_action">Bu İşlem Geri Alınamaz !</string>
 </resources>
