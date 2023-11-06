@@ -5,7 +5,8 @@ https://github.com/turkmuhendisi/PasswNote/assets/116950260/e2333997-16c8-4e75-b
 
 
 ![appBannerV1](https://github.com/turkmuhendisi/PasswNote/assets/74829377/ee84b88e-8d2a-422d-851b-4bf43571c822)
-![w1](https://github.com/turkmuhendisi/PasswNote/assets/116950260/1d02d04e-0009-4474-98ea-aa269c10b4ae)
+![w1](https://github.com/turkmuhendisi/PasswNote/assets/116950260/2a162a34-2411-4abb-86b4-71232d0458e8)
+
 
 
 
