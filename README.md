@@ -3,12 +3,6 @@
 ![appBannerV1](https://github.com/turkmuhendisi/PasswNote/assets/74829377/ee84b88e-8d2a-422d-851b-4bf43571c822)
 ![linkedinRead](https://github.com/turkmuhendisi/PasswNote/assets/74829377/88921633-66b6-4a64-8b0a-bb895e5b4d1a)
 
-
-
-# PasswNote Android App
-
-![App Logo](link-to-your-logo.png)
-
 ## About the Project
 
 "PasswNote" is an Android application designed to create and securely store strong passwords. It offers the following key features:
