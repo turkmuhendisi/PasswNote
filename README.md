@@ -1,8 +1,8 @@
 # PasswNote Android App
 
 ![appBannerV1](https://github.com/turkmuhendisi/PasswNote/assets/74829377/ee84b88e-8d2a-422d-851b-4bf43571c822)
-![Artboard 1](https://github.com/turkmuhendisi/PasswNote/assets/74829377/f21377fb-9993-45df-b99d-e5739c72e02a)
-![Artboard 2](https://github.com/turkmuhendisi/PasswNote/assets/74829377/904e56ab-ba6d-4b08-a8ed-134bf6c4a0c1)
+![linkedinRead](https://github.com/turkmuhendisi/PasswNote/assets/74829377/88921633-66b6-4a64-8b0a-bb895e5b4d1a)
+
 
 
 "PasswNote" is an Android app that securely generates and stores strong, random passwords.
