@@ -1,9 +1,6 @@
 # PasswNote Android App
 
-![1698690513281](https://github.com/turkmuhendisi/PasswNote/assets/116950260/cf973146-9ceb-4215-bb16-b868e2820270)
-![1697409442356](https://github.com/turkmuhendisi/PasswNote/assets/116950260/7d0a2826-7339-40c3-9342-4de22bd3d5c0)
-![1697409248480](https://github.com/turkmuhendisi/PasswNote/assets/116950260/f7f9deda-abb3-4231-a32c-99b5a423059d)
-
+![1698690513281](https://github.com/turkmuhendisi/PasswNote/assets/116950260/2f3b9800-df3d-472a-a143-d76a597399e7)
 
 
 
