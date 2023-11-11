@@ -50,7 +50,6 @@ For more information and access to the application's source code, please visit o
 
 To get started with the project, you can clone it to your local machine and set up your development environment. Detailed instructions and dependencies can be found in the README file in the project repository.
 
-```bash
 git clone https://github.com/turkmuhendisi/PasswNote.git
 cd PasswNote
 # Set up your development environment
