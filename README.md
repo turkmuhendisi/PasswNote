@@ -7,7 +7,7 @@ https://github.com/turkmuhendisi/PasswNote/assets/116950260/e2333997-16c8-4e75-b
 ![w1](https://github.com/turkmuhendisi/PasswNote/assets/116950260/2a162a34-2411-4abb-86b4-71232d0458e8)
 
 
-1
+
 
 
 ## About the Project
