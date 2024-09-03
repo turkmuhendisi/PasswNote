@@ -9,7 +9,6 @@ https://github.com/turkmuhendisi/PasswNote/assets/116950260/e2333997-16c8-4e75-b
 
 
 
-
 ## About the Project
 
 "PasswNote" is an Android application designed to create and securely store strong passwords. It offers the following key features:
@@ -20,17 +19,11 @@ https://github.com/turkmuhendisi/PasswNote/assets/116950260/e2333997-16c8-4e75-b
 - **Data Security:** Emphasizes data security and privacy.
 - **User-Friendly Interface:** Features a user-friendly distribution.
 
-This app is designed to help users manage their online accounts with security and complex passwords.
+<div align="center">
 
-## Skills Required
+[![google-play-badge](https://github.com/user-attachments/assets/0449621d-746d-49dd-a3cb-e9cc3f39f046)](https://play.google.com/store/apps/details?id=com.erdemserhat.ultimatebox&hl=en)
 
-Developing this project requires the following skills:
-
-- Kotlin and Java proficiency.
-- Familiarity with Object-Oriented Programming (OOP) principles.
-- Algorithm development skills.
-- Knowledge of SQLite for data management.
-- Experience in Android app development.
+</div>
 
 ## Technologies Used
 
@@ -42,16 +35,4 @@ The project has been developed using the following technologies:
 - SQLite database for data management.
 - Android app development techniques.
 
-## GitHub Repository
-
-For more information and access to the application's source code, please visit our GitHub repository: [GitHub Repository](link-to-your-github-repo)
-
-## Getting Started
-
-To get started with the project, you can clone it to your local machine and set up your development environment. Detailed instructions and dependencies can be found in the README file in the project repository.
-
-git clone https://github.com/turkmuhendisi/PasswNote.git
-cd PasswNote
-# Set up your development environment
-# Launch the application
 
